@@ -1,134 +1,156 @@
-*{
-    color:rgb(58, 44, 3);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+* {
+  color: rgb(58, 44, 3);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-body{
-    background-color: bisque;
-    margin:0px;
-    min-height: 100vh;
-    display:flex;
-    flex-direction: column;
+
+body {
+  background-color: bisque;
+  margin: 0px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-p{
-    font-size: 18px;
+
+p {
+  font-size: 18px;
 }
-.headerButtons{
-    display: flex;
-    justify-content: space-between;
-    background: linear-gradient(to bottom, rgba(121, 103, 74,0.7), rgba(0,0,0,0));
-    padding:10px;
+
+.headerButtons {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(121, 103, 74, 0.7), rgba(0, 0, 0, 0));
+  padding: 10px;
 }
-.globe{
-    width: 5vw;
-    height: auto;
+
+.globe {
+  width: 5vw;
+  height: auto;
 }
-.homeGlobe{
-    width: 10vw;
-    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+
+.homeGlobe {
+  width: 10vw;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
 }
-.globeContainer{
-    display: flex;
-    justify-content: center;
+
+.globeContainer {
+  display: flex;
+  justify-content: center;
 }
-.profile{
-    width: 5vw;
-    height: auto;
+
+.profile {
+  width: 5vw;
+  height: auto;
 }
-.logo{
-    width: 5vw;
-    height: auto;
-    justify-content: left;
+
+.logo {
+  width: 5vw;
+  height: auto;
+  justify-content: left;
 }
-.pageTitle{
-    font-size: 5vh;
-    text-align: center;
+
+.pageTitle {
+  font-size: 5vh;
+  text-align: center;
 }
-.cityTitles{
-    font-size: 5vh;
-    text-align: center;
-    background-image: radial-gradient(rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%), url(../images/Madrid.jpg);
-    background-size: cover;
-    color:wheat;
-    padding:10px;
+
+.cityTitles {
+  font-size: 5vh;
+  text-align: center;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/Madrid.jpg);
+  background-size: cover;
+  color: wheat;
+  padding: 10px;
 }
-.signUpButton{
-    background-color: rgb(119, 93, 55);
-    width:80px;
-    height: 30px;
-    color:bisque;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    font-size: 18px;
+
+.signUpButton {
+  background-color: rgb(119, 93, 55);
+  padding: 6px 16px;
+  color: bisque;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  font-size: 18px;
 }
-.quizButton{
-    background-color: rgb(119, 93, 55);
-    width:130px;
-    height: 40px;
-    color:bisque;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    font-size: 18px;
+
+.quizButton {
+  background-color: rgb(119, 93, 55);
+  width: 130px;
+  height: 40px;
+  color: bisque;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  font-size: 18px;
 }
-.button{
-    display:flex;
-    justify-content: center;
-    text-decoration: none;
+
+.button {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
 }
-.cityRow{
-    display: flex;
-    gap: 20px;
+
+.cityRow {
+  display: flex;
+  gap: 20px;
 }
-.cityBox{
-    display: inline-block;
-    border: black;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 10px;
-    margin: 10px;
-    flex:1;
-    background-color: rgb(119, 93, 55);
+
+.cityBox {
+  display: inline-block;
+  border: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  margin: 10px;
+  flex: 1;
+  background-color: rgb(119, 93, 55);
 }
-.madridBox{
-    display: inline-block;
-    border: black;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 10px;
-    margin: 10px;
-    flex:1;
-    background-image: radial-gradient(rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%), url(../images/Madrid.jpg);
+
+.madridBox {
+  display: inline-block;
+  border: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  margin: 10px;
+  flex: 1;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(../images/Madrid.jpg);
 }
-.cityTitle{
-    text-align: center;
-    font-size: 25px;
-    font-weight:bold;
-    color:bisque;
+
+.cityTitle {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: bisque;
 }
-.cityLinks{
-    margin-left: 10px;
-    color:bisque;
+
+.cityLinks {
+  margin-left: 10px;
+  color: bisque;
 }
-.wikiText{
-    margin:0px;
-    margin-left:10px;
+
+.wikiText {
+  margin: 0px;
+  margin-left: 10px;
 }
-.wikiHeader{
-    margin-left: 20px;
-    text-decoration: underline;
+
+.wikiHeader {
+  margin-left: 20px;
+  text-decoration: underline;
 }
-footer{
-    background: rgb(121, 103, 74);
-    text-align: center;
-    width: 100%;
-    margin-top: auto;
-    margin-bottom: -20px;
+
+footer {
+  background: rgb(121, 103, 74);
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: -20px;
 }
-.footerUL{
-    display: inline-block;
-    text-align: left;
-    list-style-type: circle;
+
+.footerUL {
+  display: inline-block;
+  text-align: left;
+  list-style-type: circle;
 }
-.footerBullets{
-    color:bisque;
-    font-size: 14px;
+
+.footerBullets {
+  color: bisque;
+  font-size: 14px;
 }
