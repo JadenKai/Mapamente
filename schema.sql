@@ -2,45 +2,43 @@ CREATE DATABASE IF NOT EXISTS mapamente;
 USE mapamente;
 
 CREATE TABLE City (
-    city_id INT NOT NULL AUTO_INCREMENT,
-    city_name VARCHAR(100) NOT NULL UNIQUE,
-    history_text TEXT NOT NULL,
-    facts_text TEXT NOT NULL,
-    city_banner VARCHAR(255) NOT NULL,
-    PRIMARY KEY (city_id)
+    cityId      INT AUTO_INCREMENT PRIMARY KEY,
+    cityName    VARCHAR(100) NOT NULL UNIQUE,
+    historyText TEXT NOT NULL,
+    factsText   TEXT NOT NULL,
+    cityBanner  VARCHAR(255) NOT NULL,
 );
 
-CREATE TABLE Player (
-    player_id INT NOT NULL AUTO_INCREMENT,
-    username VARCHAR(50) NOT NULL UNIQUE,
-    profile_pic VARCHAR(255) NOT NULL,
-    is_public BOOLEAN NOT NULL,
-    is_admin BOOLEAN NOT NULL,
-    PRIMARY KEY (player_id)
+CREATE TABLE User (
+    userId       INT AUTO_INCREMENT PRIMARY KEY,
+    username     VARCHAR(50)  NOT NULL UNIQUE,
+    passwordHash VARCHAR(255) NOT NULL,
+    profilePic   VARCHAR(255),
+    isPublic     BOOLEAN      NOT NULL DEFAULT true,
+    isAdmin      BOOLEAN      NOT NULL DEFAULT false
 );
 
 CREATE TABLE Question (
-    question_id INT NOT NULL AUTO_INCREMENT,
-    city_id INT NOT NULL,
-    question_text VARCHAR(255) NOT NULL,
-    PRIMARY KEY (question_id),
-    CONSTRAINT fk_question_city FOREIGN KEY (city_id) REFERENCES City(city_id)
+    questionId   INT AUTO_INCREMENT PRIMARY KEY,
+    cityId       INT  NOT NULL,
+    questionText TEXT NOT NULL,
+    FOREIGN KEY (cityId) REFERENCES City(cityId)
 );
 
-CREATE TABLE AnswerChoice (
-    choice_id INT NOT NULL AUTO_INCREMENT,
-    question_id INT NOT NULL,
-    choice_text VARCHAR(255) NOT NULL,
-    is_correct BOOLEAN NOT NULL,
-    PRIMARY KEY (choice_id),
-    CONSTRAINT fk_answerchoice_question FOREIGN KEY (question_id) REFERENCES Question(question_id)
+CREATE TABLE Answer (
+    answerId   INT AUTO_INCREMENT PRIMARY KEY,
+    questionId INT          NOT NULL,
+    answerText VARCHAR(255) NOT NULL,
+    isCorrect  BOOLEAN      NOT NULL DEFAULT false,
+    FOREIGN KEY (questionId) REFERENCES Question(questionId)
 );
 
 CREATE TABLE Score (
-    score_id INT NOT NULL AUTO_INCREMENT,
-    city_id INT NOT NULL,
-    player_id INT NOT NULL,
-    PRIMARY KEY (score_id),
-    CONSTRAINT fk_score_city FOREIGN KEY (city_id) REFERENCES City(city_id),
-    CONSTRAINT fk_score_player FOREIGN KEY (player_id) REFERENCES Player(player_id)
+    scoreId      INT AUTO_INCREMENT PRIMARY KEY,
+    userId       INT NOT NULL,
+    cityId       INT NOT NULL,
+    correctCount INT NOT NULL DEFAULT 0,
+    score        INT NOT NULL,
+    FOREIGN KEY (userId) REFERENCES User(userId),
+    FOREIGN KEY (cityId) REFERENCES City(cityId)
 );
