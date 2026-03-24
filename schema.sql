@@ -15,7 +15,8 @@ CREATE TABLE User (
     passwordHash VARCHAR(255) NOT NULL,
     profilePic   VARCHAR(255),
     isPublic     BOOLEAN      NOT NULL DEFAULT true,
-    isAdmin      BOOLEAN      NOT NULL DEFAULT false
+    isAdmin      BOOLEAN      NOT NULL DEFAULT false,
+    themeLight   BOOLEAN      NOT NULL DEFAULT true
 );
 
 CREATE TABLE Question (

@@ -15,6 +15,7 @@ interface User extends RowDataPacket {
   profilePic: string;
   isPublic: boolean;
   isAdmin: boolean;
+  themeLight: boolean;
 }
 
 interface QuestionEntry extends RowDataPacket {
