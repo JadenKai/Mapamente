@@ -64,8 +64,7 @@ p {
 
 .signUpButton {
   background-color: rgb(83, 91, 100);
-  width: 80px;
-  height: 40px;
+  padding: 6px 16px;
   color: rgb(218, 223, 228);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
@@ -137,34 +136,34 @@ p {
   text-decoration: underline;
 }
 
-.questionBox{
-  display:flex;
-  display:inline-block;
+.questionBox {
+  display: flex;
+  display: inline-block;
   justify-content: center;
-  border:black;
+  border: black;
   border-style: solid;
   border-width: 2px;
   border-radius: 10px;
   margin: 10px;
-  width:400px;
-  height:175px;
+  width: 400px;
+  height: 175px;
   background-color: rgb(73, 81, 90);
 }
 
-.question{
-  color:rgb(218, 223, 228);
+.question {
+  color: rgb(218, 223, 228);
   text-align: center;
-  
+
 }
 
 .answerChoices {
   text-align: left;
   display: inline-block;
   text-align: left;
-  list-style-type:circle;
+  list-style-type: circle;
 }
 
-.answer{
+.answer {
   color: rgb(218, 223, 228);
   font-size: 18px;
 }
@@ -181,5 +180,10 @@ footer {
   display: inline-block;
   text-align: left;
   list-style-type: circle;
+  font-size: 14px;
+}
+
+.footerBullets {
+  color: rgb(218, 223, 228);
   font-size: 14px;
 }
