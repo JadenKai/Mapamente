@@ -136,34 +136,34 @@ p {
   text-decoration: underline;
 }
 
-.questionBox{
-  display:flex;
-  display:inline-block;
+.questionBox {
+  display: flex;
+  display: inline-block;
   justify-content: center;
-  border:black;
+  border: black;
   border-style: solid;
   border-width: 2px;
   border-radius: 10px;
   margin: 10px;
-  width:400px;
-  height:175px;
+  width: 400px;
+  height: 175px;
   background-color: rgb(179, 153, 116);
 }
 
-.question{
-  color:rgb(58, 44, 3);
+.question {
+  color: rgb(58, 44, 3);
   text-align: center;
-  
+
 }
 
 .answerChoices {
   text-align: left;
   display: inline-block;
   text-align: left;
-  list-style-type:circle;
+  list-style-type: circle;
 }
 
-.answer{
+.answer {
   color: rgb(58, 44, 3);
   font-size: 18px;
 }
@@ -180,6 +180,7 @@ footer {
   display: inline-block;
   text-align: left;
   list-style-type: circle;
+  font-size: 14px;
 }
 
 .footerBullets {
