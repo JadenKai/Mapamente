@@ -7,6 +7,7 @@ router.get('/', (_req: Request, res: Response) => {
 });
 
 router.get('/home', (_req: Request, res: Response) => {
+  console.log('home route hit')
   res.render('home');
 });
 
