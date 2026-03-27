@@ -1,5 +1,21 @@
 import type { RowDataPacket, ResultSetHeader } from 'mysql2';
 
+interface Answer {
+  answerID: number;
+  answerText: string;
+}
+
+interface Question {
+  questionId: number;
+  questionText: string;
+  answers: Answer[];
+}
+
+interface Repsponce {
+  questionId: number;
+  answerId: number;
+}
+
 interface City extends RowDataPacket {
   cityId: number;
   cityName: string;
