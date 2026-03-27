@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "build:client": "tsc public/app.ts --target ES2022 --outDir public --skipLibCheck",
-    "start": "node_modules/.bin/nodemon --legacy-watch --exec node_modules/.bin/tsx index.ts"
+    "start": "node_modules/.bin/nodemon --legacy-watch --ext ts,json,ejs --exec node_modules/.bin/tsx index.ts"
   },
   "repository": {
     "type": "git",
