@@ -2,7 +2,7 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"
+      - "3321:3321"
     environment:
       DB_HOST: process.env.DB_HOST
       DB_USER: process.env.DB_USER
