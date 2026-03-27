@@ -5,22 +5,40 @@ services:
       - "3321:3321"
     environment:
       DB_HOST: db
-      DB_USER: mapamente
-      DB_PASSWORD: password
-      DB_NAME: mapamente
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+    volumes:
+      - ./index.ts:/app/index.ts
+      - ./routes:/app/routes
+      - ./controllers:/app/controllers
+      - ./models:/app/models
+      - ./config:/app/config
+      - ./views:/app/views
+      - ./public:/app/public
+      - ./.env:/app/.env
+    command: npm start
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   db:
     image: mysql:8
+    ports:
+      - "3306:3306"
     environment:
-      MYSQL_DATABASE: mapamente
-      MYSQL_USER: mapamente
-      MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
       - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
 volumes:
   db_data:

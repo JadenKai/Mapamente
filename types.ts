@@ -11,7 +11,7 @@ interface Question {
   answers: Answer[];
 }
 
-interface Repsponce {
+interface UserResponse {
   questionId: number;
   answerId: number;
 }
@@ -53,4 +53,15 @@ interface Score extends RowDataPacket {
   cityId: number;
   correctCount: number;
   score: number;
+}
+
+export {
+  Answer,
+  Question,
+  UserResponse,
+  City,
+  User,
+  QuestionEntry,
+  AnswerEntry,
+  Score
 }
