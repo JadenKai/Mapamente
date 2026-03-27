@@ -5,7 +5,7 @@ import router from './routes/routes.js';
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const hostname: string = '127.0.0.1'; //'0.0.0.0'
+const hostname: string = '0.0.0.0';
 const port: number = 3321;
 
 const app = express();
