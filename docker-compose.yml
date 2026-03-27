@@ -4,20 +4,20 @@ services:
     ports:
       - "3321:3321"
     environment:
-      DB_HOST: db
-      DB_USER: mapamente
-      DB_PASSWORD: password
-      DB_NAME: mapamente
+      DB_HOST: process.env.DB_HOST
+      DB_USER: process.env.DB_USER
+      DB_PASSWORD: process.env.DB_PASSWORD
+      DB_NAME: process.env.DB_NAME
     depends_on:
       - db
 
   db:
     image: mysql:8
     environment:
-      MYSQL_DATABASE: mapamente
-      MYSQL_USER: mapamente
-      MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: process.env.MYSQL_DATABASE
+      MYSQL_USER: process.env.MYSQL_USER
+      MYSQL_PASSWORD: process.env.MYSQL_PASSWORD
+      MYSQL_ROOT_PASSWORD: process.env.MYSQL_ROOT_PASSWORD
     volumes:
       - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
       - db_data:/var/lib/mysql
