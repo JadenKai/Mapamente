@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+        <header class = "pageTitle">
+            Sign Up
+        </header>
+        <div style="display:flex; justify-content: center;">
+            <div class="formBox">
+                <form class="form"> <!--action="/add.player" method="post"--> 
+                    <label for="username">Username:</label>
+                    <input class="formInput" type="text" id="username" placeholder="player123"><br>
+                    <label for="password">Password:</label>
+                    <input type="text" id="password" placeholder="*******"><br>
+                    <div class="center">
+                        <input class="formInput" type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <p style="display:flex; justify-content: center;">
+            Or if you already have an account:
+        </p>
+        <a href="/login" class="button">
+            <button  class = "signUpButton">
+                Login
+            </button>
+        </a>
+<%- include('partials/footer') %>
