@@ -39,6 +39,11 @@ p {
   font-size: 18px;
 }
 
+.center{
+  display: flex;
+  justify-content: center;
+}
+
 .headerButtons {
   display: flex;
   justify-content: space-between;
@@ -65,6 +70,33 @@ p {
   width: 5vw;
   height: auto;
 }
+
+.formBox{
+  display: inline-block;
+  border: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: var(--button-color);
+  justify-content: center;
+}
+
+.form{
+  margin:20px;
+  padding:10px;
+  line-height: 1.8;
+}
+
+.formInput{
+  color: var(--dark-text);
+}
+
+input[type="submit"] {
+    appearance: none;
+    -webkit-appearance: none;
+    color: black;
+  }
 
 .logo {
   width: 5vw;
