@@ -71,6 +71,11 @@ p {
   height: auto;
 }
 
+.profilePicture {
+  width: 15vw;
+  height: auto;
+}
+
 .formBox{
   display: inline-block;
   border: black;
@@ -141,6 +146,18 @@ input[type="submit"] {
   display: flex;
   justify-content: center;
   text-decoration: none;
+}
+
+.settingsBox{
+  flex:1;
+  display: inline-block;
+  border:black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: var(--button-color);
+  justify-content: center;
 }
 
 .cityRow {
