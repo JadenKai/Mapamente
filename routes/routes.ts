@@ -14,6 +14,15 @@ router.get('/cities', (_req: Request, res: Response) => {
   res.render('cities');
 });
 
+router.get('/login', (_req: Request, res: Response) => {
+  res.render('login');
+});
+
+router.get('/signup', (_req: Request, res: Response) => {
+  res.render('signup');
+});
+
+
 router.get('/madrid/wiki', (_req: Request, res: Response) => {
   res.render('madridWiki');
 });
