@@ -1,25 +1,25 @@
-:root{
+:root {
   --dark-text: rgb(58, 44, 3);
   --light-text: bisque;
   --background-color: bisque;
-  --gradient-color:rgba(121, 103, 74, 0.7);
-  --tile-color:wheat;
-  --button-color:rgb(119, 93, 55);
-  --question-box-color:rgb(179, 153, 116);
-  --footer-color:rgb(121, 103, 74);
+  --gradient-color: rgba(121, 103, 74, 0.7);
+  --tile-color: wheat;
+  --button-color: rgb(119, 93, 55);
+  --question-box-color: rgb(179, 153, 116);
+  --footer-color: rgb(121, 103, 74);
 }
 
 @media (prefers-color-scheme: dark) {
-:root{
-  --dark-text: rgb(218, 223, 228);
-  --light-text: rgb(218, 223, 228);
-  --background-color:rgb(85, 102, 124);
-  --gradient-color:rgba(10, 10, 20, 0.7);
-  --tile-color:rgb(73, 81, 90);
-  --button-color:rgb(83, 91, 100);
-  --question-box-color:rgb(73, 81, 90);
-  --footer-color:rgb(83, 91, 100);
-}
+  :root {
+    --dark-text: rgb(218, 223, 228);
+    --light-text: rgb(218, 223, 228);
+    --background-color: rgb(85, 102, 124);
+    --gradient-color: rgba(10, 10, 20, 0.7);
+    --tile-color: rgb(73, 81, 90);
+    --button-color: rgb(83, 91, 100);
+    --question-box-color: rgb(73, 81, 90);
+    --footer-color: rgb(83, 91, 100);
+  }
 }
 
 * {
@@ -169,13 +169,13 @@ p {
   border-width: 2px;
   border-radius: 10px;
   margin: 10px;
-  width:400px;
-  height:175px;
+  width: 400px;
+  height: 175px;
   background-color: var(--question-box-color);
 }
 
-.question{
-  color:var(--dark-text);
+.question {
+  color: var(--dark-text);
   text-align: center;
 
 }
@@ -187,7 +187,7 @@ p {
   list-style-type: circle;
 }
 
-.answer{
+.answer {
   color: var(--dark-text);
   font-size: 18px;
 }

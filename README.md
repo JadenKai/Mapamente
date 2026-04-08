@@ -4,7 +4,13 @@ A trivia site over latin cities
 
 ## Setup
 
-### 1. Install dependencies
+### Using docker
+
+- `docker compose up` — regular usage
+- `docker compose up --build` — only needed when you change `package.json`, `Dockerfile`, or anything that affects the image (adding/removing deps, etc.). For normal code changes, the bind mounts handle it live.
+- `docker compose down -v` — only needed when you change `schema.sql` and want the database to re-initialize. MySQL won't re-run the init scripts unless the data volume is wiped.
+
+### Not using docker
 
 ```
 npm install
