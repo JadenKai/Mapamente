@@ -6,7 +6,7 @@ CREATE TABLE City (
     cityName    VARCHAR(100) NOT NULL UNIQUE,
     historyText TEXT NOT NULL,
     factsText   TEXT NOT NULL,
-    cityBanner  VARCHAR(255) NOT NULL,
+    cityBanner  VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE User (
