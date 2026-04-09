@@ -1,5 +1,34 @@
-<%- include('partials/header') %>
+<%- include('partials/header') %> <!-- Assumming I'm passed in a list of Question stored in quizQuestions -->
         <header class = "pageTitle">
-            Quiz
+            Quiz Template
         </header>
+        <div class="QuestionsBox">
+            <form>
+                <fieldset>
+                    <legend>What is the capital of France?</legend>
+
+                    <label class="quizLabel">
+                    <input type="radio" name="question1" value="a">
+                    Berlin
+                    </label>
+
+                    <label class="quizLabel">
+                    <input type="radio" name="question1" value="b">
+                    Madrid
+                    </label>
+
+                    <label class="quizLabel">
+                    <input type="radio" name="question1" value="c">
+                    Paris
+                    </label>
+
+                    <label class="quizLabel">
+                    <input type="radio" name="question1" value="d">
+                    Rome
+                    </label>
+                </fieldset>
+
+                <input type="submit" value="Submit answers">
+            </form>
+        </div>
 <%- include('partials/footer') %>
