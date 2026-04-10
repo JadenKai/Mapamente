@@ -5,7 +5,6 @@ import { type CityEntry } from "../types.js";
 
 async function getCityById(cityId: number): Promise<CityEntry> {
     const result = (await pool.query<CityEntry[]>("SELECT * FROM City WHERE CityId = ?", cityId))[0];
-    console.log(result)
     return(result[0])
 }
 
