@@ -8,4 +8,6 @@ router.post("/test/:id", Controller.produceQuiz);
 
 router.get("/test/:id", Controller.produceQuiz)
 
+router.get("/quiz/:id", Controller.produceQuiz)
+
 export default router;

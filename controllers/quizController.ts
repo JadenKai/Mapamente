@@ -24,7 +24,7 @@ async function produceQuiz(req: Request, res: Response){
         }
         questionOutput.push({questionId: qEntry.questionId, questionText: qEntry.questionText, answers: answerOutput})
     }
-    res.render('test', {quizQuestions: questionOutput, cityName: (await getCityById(cityId)).cityName});
+    res.render('quizTemplate', {quizQuestions: questionOutput, cityName: (await getCityById(cityId)).cityName});
 }
 
 export {
