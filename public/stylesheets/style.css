@@ -6,6 +6,8 @@
   --tile-color: wheat;
   --button-color: rgb(119, 93, 55);
   --question-box-color: rgb(179, 153, 116);
+  --answer-hover-color: rgb(159,133,96);
+  --shadow-color: rgba(0,0,0,0);
   --footer-color: rgb(121, 103, 74);
 }
 /* Automatically uses dark variables if system settings are on dark mode: */
@@ -19,6 +21,7 @@
     --button-color: rgb(83, 91, 100);
     --question-box-color: rgb(73, 81, 90);
     --answer-hover-color: rgb(103, 111, 120);
+    --shadow-color: rgba(0,0,0,0.5);
     --footer-color: rgb(83, 91, 100);
   }
 }
@@ -110,6 +113,7 @@ input[type="submit"] {
   display: flex;
   justify-content: center;
 }
+
 .quizLabel{
   display:flex;
   align-items: center;
@@ -119,13 +123,30 @@ input[type="submit"] {
   border-radius:8px;
   cursor: pointer;
   transition: background 0.15s;
+  background-color: var(--background-color);
 }
+
 label.selected {
   background: var(--answer-hover-color); 
 }
+
 label:hover {
   background: var(--answer-hover-color);
 }
+
+.question{
+  width:30vw;
+  border-color:var(--dark-text);
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+.questionTitle{
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px var(--shadow-color);
+}
+
 /*--------------------*/
 
 .logo {
@@ -251,11 +272,11 @@ label:hover {
   background-color: var(--question-box-color);
 }
 
-.question {
+/*.question {
   color: var(--dark-text);
   text-align: center;
 
-}
+}*/
 
 .answerChoices {
   text-align: left;

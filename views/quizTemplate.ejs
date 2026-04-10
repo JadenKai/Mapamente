@@ -1,34 +1,24 @@
-<%- include('partials/header') %> <!-- Assumming I'm passed in a list of Question stored in quizQuestions -->
+<%- include('partials/header') %> <!-- Assumming I'm passed in a list of Question stored in quizQuestions and cityName -->
         <header class = "pageTitle">
-            Quiz Template
+            <%=cityName%>
         </header>
-        <div class="QuestionsBox">
-            <form>
-                <fieldset>
-                    <legend>What is the capital of France?</legend>
-
-                    <label class="quizLabel">
-                    <input type="radio" name="question1" value="a">
-                    Berlin
-                    </label>
-
-                    <label class="quizLabel">
-                    <input type="radio" name="question1" value="b">
-                    Madrid
-                    </label>
-
-                    <label class="quizLabel">
-                    <input type="radio" name="question1" value="c">
-                    Paris
-                    </label>
-
-                    <label class="quizLabel">
-                    <input type="radio" name="question1" value="d">
-                    Rome
-                    </label>
-                </fieldset>
-
-                <input type="submit" value="Submit answers">
+        <div class="questionsBox">
+            <form action="/quizSubmission" method="post" >
+                <br>
+                <% for(let q of quizQuestions) {%>
+                    <fieldset class="question">
+                        <legend class="questionTitle"><%= q.questionText %></legend>
+                        <% for(let answer of q.answers) { %>
+                            <label class="quizLabel">
+                                <input type="radio" name="<%=q.questionId%>" value="<%= answer.answerID %>">
+                                <%= answer.answerText %>
+                            </label>
+                        <% } %>
+                    </fieldset><br>
+                <% } %>
+                <div class="center">
+                    <input type="submit" value="Submit answers">
+                </div>
             </form>
         </div>
 <%- include('partials/footer') %>
