@@ -1,5 +1,25 @@
-<%- include('partials/header') %>
+<%- include('partials/header') %> <!-- Assumming I'm passed in a list of Question stored in quizQuestions and cityName -->
         <header class = "pageTitle">
-            Quiz
+            <%=cityName%>
         </header>
+        <div class="questionsBox">
+            <form action="/quizSubmission" method="post" > <!-- Should return "questionId"="answerID" -->
+                <br>
+                <% for(let q of quizQuestions) {%>
+                    <fieldset class="question">
+                        <legend class="questionTitle"><%= q.questionText %></legend>
+                        <% for(let answer of q.answers) { %>
+                            <label class="quizLabel">
+                                <input type="radio" name="<%=q.questionId%>" value="<%= answer.answerID %>">
+                                <%= answer.answerText %>
+                            </label>
+                        <% } %>
+                    </fieldset><br>
+                <% } %>
+                <div class="center">
+                    <input type="submit" value="Submit answers">
+                </div>
+            </form>
+        </div>
+        <br>
 <%- include('partials/footer') %>

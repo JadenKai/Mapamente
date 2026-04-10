@@ -1,4 +1,4 @@
-:root {
+:root { /* Variables that control colors for light mode: */
   --dark-text: rgb(58, 44, 3);
   --light-text: bisque;
   --background-color: bisque;
@@ -6,11 +6,13 @@
   --tile-color: wheat;
   --button-color: rgb(119, 93, 55);
   --question-box-color: rgb(179, 153, 116);
+  --answer-hover-color: rgb(159,133,96);
+  --shadow-color: rgba(0,0,0,0);
   --footer-color: rgb(121, 103, 74);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
+/* Automatically uses dark variables if system settings are on dark mode: */
+@media (prefers-color-scheme: dark) { 
+  :root { /* Variables that control colors for dark mode: */
     --dark-text: rgb(218, 223, 228);
     --light-text: rgb(218, 223, 228);
     --background-color: rgb(85, 102, 124);
@@ -18,6 +20,8 @@
     --tile-color: rgb(73, 81, 90);
     --button-color: rgb(83, 91, 100);
     --question-box-color: rgb(73, 81, 90);
+    --answer-hover-color: rgb(103, 111, 120);
+    --shadow-color: rgba(0,0,0,0.5);
     --footer-color: rgb(83, 91, 100);
   }
 }
@@ -71,11 +75,11 @@ p {
   height: auto;
 }
 
-.profilePicture {
+.profilePicture { /* For Profile Page */
   width: 15vw;
   height: auto;
 }
-
+/*For login and signup pages:*/
 .formBox{
   display: inline-block;
   border: black;
@@ -102,6 +106,48 @@ input[type="submit"] {
     -webkit-appearance: none;
     color: black;
   }
+/*--------------------*/
+
+/* For quiz template page: */
+.questionsBox{
+  display: flex;
+  justify-content: center;
+}
+
+.quizLabel{
+  display:flex;
+  align-items: center;
+  gap:12px;
+  padding: 12px 14px;
+  border: 0.5px solid black;
+  border-radius:8px;
+  cursor: pointer;
+  transition: background 0.15s;
+  background-color: var(--background-color);
+}
+
+label.selected {
+  background: var(--answer-hover-color); 
+}
+
+label:hover {
+  background: var(--answer-hover-color);
+}
+
+.question{
+  width:30vw;
+  border-color:var(--dark-text);
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+.questionTitle{
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px var(--shadow-color);
+}
+
+/*--------------------*/
 
 .logo {
   width: 5vw;
@@ -199,6 +245,7 @@ input[type="submit"] {
   color: var(--light-text);
 }
 
+/* Old prototype wikis: */
 .wikiText {
   margin: 0px;
   margin-left: 10px;
@@ -208,7 +255,9 @@ input[type="submit"] {
   margin-left: 20px;
   text-decoration: underline;
 }
+/*-----------------------------*/
 
+/* These are residual from the prototype, no longer used: */
 .questionBox {
   display: flex;
   display: inline-block;
@@ -223,11 +272,11 @@ input[type="submit"] {
   background-color: var(--question-box-color);
 }
 
-.question {
+/*.question {
   color: var(--dark-text);
   text-align: center;
 
-}
+}*/
 
 .answerChoices {
   text-align: left;
@@ -240,7 +289,9 @@ input[type="submit"] {
   color: var(--dark-text);
   font-size: 18px;
 }
+/*----------------------------------*/
 
+/* Below are for the footer partial */
 footer {
   background: var(--footer-color);
   text-align: center;

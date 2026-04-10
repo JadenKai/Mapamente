@@ -22,6 +22,9 @@ router.get('/signup', (_req: Request, res: Response) => {
   res.render('signup');
 });
 
+router.get('/quiz', (_req: Request, res: Response) => {
+  res.render('quizTemplate');
+});
 
 router.get('/madrid/wiki', (_req: Request, res: Response) => {
   res.render('madridWiki');
