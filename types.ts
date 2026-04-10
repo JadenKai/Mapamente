@@ -1,7 +1,7 @@
 import type { RowDataPacket, ResultSetHeader } from 'mysql2';
 
 interface Answer {
-  answerID: number;
+  answerId: number;
   answerText: string;
 }
 
@@ -16,7 +16,7 @@ interface UserResponse {
   answerId: number;
 }
 
-interface City extends RowDataPacket {
+interface CityEntry extends RowDataPacket {
   cityId: number;
   cityName: string;
   historyText: string;
@@ -24,7 +24,7 @@ interface City extends RowDataPacket {
   cityBanner: string;
 }
 
-interface User extends RowDataPacket {
+interface UserEntry extends RowDataPacket {
   userId: number;
   username: string;
   passwordHash: string;
@@ -47,7 +47,7 @@ interface AnswerEntry extends RowDataPacket {
   isCorrect: boolean;
 }
 
-interface Score extends RowDataPacket {
+interface ScoreEntry extends RowDataPacket {
   scoreId: number;
   userId: number;
   cityId: number;
@@ -59,9 +59,9 @@ export {
   Answer,
   Question,
   UserResponse,
-  City,
-  User,
+  CityEntry,
+  UserEntry,
   QuestionEntry,
   AnswerEntry,
-  Score
+  ScoreEntry
 }
