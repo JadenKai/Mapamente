@@ -4,13 +4,14 @@
         </header>
         <div style="display:flex; justify-content: center;">
             <div class="formBox">
+                <% if (locals.error) { %><p style="color: red;"><%= error %></p><% } %>
                 <form class="form" action="/addPlayer" method="post"> <!--This will post Username, Password, and PasswordCheck string variables as {"Username":"input",etc}-->
                     <label for="username">Username: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
-                    <input class="formInput" type="text" id="username" name="Username" placeholder="player123"><br>
+                    <input class="formInput" type="text" id="username" name="username" placeholder="player123"><br>
                     <label for="password">Password: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</label>
-                    <input type="password" id="password" name="Password" placeholder="*******"><br>
+                    <input type="password" id="password" name="password" placeholder="*******"><br>
                     <label for="passwordCheck">Repeat Password:&nbsp;</label>
-                    <input type="password" id="passwordCheck" name="PasswordCheck" placeholder="*******"><br>
+                    <input type="password" id="passwordCheck" name="passwordCheck" placeholder="*******"><br>
                     <div class="center">
                         <input class="formInput" type="submit" value="Submit">
                     </div>

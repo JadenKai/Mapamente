@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 import router from './routes/routes.js';
 import quizRouter from './routes/quizRoutes.js';
+import userRouter from './routes/userRoutes.js';
 
 // UNECESSARY: only needed if running outside of docker.
 // try { process.loadEnvFile('.env'); } catch { /* no .env file */ }
@@ -20,6 +21,7 @@ app.use(express.static(path.join(dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(router);
 app.use(quizRouter);
+app.use(userRouter);
 
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
