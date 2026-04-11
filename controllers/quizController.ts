@@ -1,15 +1,28 @@
 import {type Response, type Request} from 'express'
 import * as Model from "../models/quizModel.js"
-import { getCityById } from '../models/cityModel.js';
-import { type QuestionEntry, type AnswerEntry, type Answer, type Question} from "../types.js";
+import { getCityById, getCityIdByQuestionId } from '../models/cityModel.js';
+import { uploadScore } from '../models/scoreModel.js';
+import { type Answer, type Question, type ScoreEntry} from "../types.js";
 
 async function defaultQuiz(req: Request, res: Response){
     res.render("test")
 }
 
 async function returnQuiz(req: Request, res:Response){
-    const {info} = req.body
-    Model.addQuestion(({questionId: 1,cityId: 2,questionText: "What"} as QuestionEntry))
+    const answerInfo = req.body
+    let corrects: number = 0;
+    for(let [_,answerId] of Object.entries(answerInfo)){
+        corrects = corrects + Number((await Model.checkCorrectAnswer(Number(answerId))));
+    }
+
+    uploadScore({
+        scoreId:-1, 
+        userId:1, //Change when cookies or environment works
+        cityId:(await getCityIdByQuestionId(Number(Object.entries(req.body)[0][0]))),
+        correctCount: corrects,
+        score: corrects*1000
+    } as ScoreEntry)
+    res.redirect("wip")
 }
 
 async function produceQuiz(req: Request, res: Response){

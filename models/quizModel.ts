@@ -23,9 +23,15 @@ async function pollAnswersForQuestion(questionId: number): Promise<AnswerEntry[]
     return(rows);
 }
 
+async function checkCorrectAnswer(answerId: number): Promise<Boolean>{
+    const result = (await pool.query<AnswerEntry[]>("SELECT * FROM Answer WHERE answerId = ?", answerId))[0];
+    return result[0].isCorrect
+}
+
 export {
     addQuestion,
     getQuestionById,
     pollQuizQuestions,
-    pollAnswersForQuestion
+    pollAnswersForQuestion,
+    checkCorrectAnswer
 }
