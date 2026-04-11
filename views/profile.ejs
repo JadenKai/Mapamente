@@ -11,21 +11,40 @@
                     Username: &nbsp;<%= user.username %>
                 </p>
             </div>
-            <div style="flex:3;">
+            <div style="flex:4;">
                 <p>
                     Stats:
                     <!-- Stats from quiz scores -->
+                     <table class="leaderboardTable">
+                        <thead>
+                            <tr>
+                                <th colspan="2" style="padding:5px;">Overall Leaderboard</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding:5px;">player123</td>
+                                <td style="padding:5px;">1200 pts</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:5px;">pgrantz</td>
+                                <td style="padding:5px;">1000 pts</td>
+                            </tr>
+                        </tbody>
+                     </table>
                 </p>
-            </div>
-            <div class="settingsBox" >
-                <div style="margin:10px;">
-                    <p>
-                        Settings:<br>
-                        <a>
-                            
-                        </a>
-                    </p>
-                </div>
+                <p>
+                    <br><br><br><br><br><br><br><br><br>
+                    Settings:<br>
+                    <br>
+                    Toggle light/dark mode
+                    <br>
+                    Toggle public/private mode
+                    <br>
+                    Change password
+                    <br>
+                    Change profile picture
+                </p>
             </div>
         </div>
 <%- include('partials/footer') %>
