@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";
-import { createUser, findUserByUsername } from "../models/userModel.js";
+import { createUser, findUserByUsername, findUserById } from "../models/userModel.js";
 
 const SALT_ROUNDS = 12;
 
@@ -53,7 +53,25 @@ async function loginPost(req: Request, res: Response): Promise<void> {
   res.redirect("/profile");
 }
 
+// Directs to login if there isn't a a session, otherwise profile
+async function profileGet(req: Request, res: Response): Promise<void> {
+  if (!req.session.userId) {
+    res.redirect("/login");
+    return;
+  }
+
+  const user = await findUserById(req.session.userId);
+
+  if (!user) {
+    res.redirect("/login");
+    return;
+  }
+
+  res.render("profile", { user });
+}
+
 export {
   signupPost,
-  loginPost
+  loginPost,
+  profileGet,
 }

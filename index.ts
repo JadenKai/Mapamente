@@ -30,6 +30,12 @@ app.use(session({
   saveUninitialized: false,
 }));
 
+// Expose session to all EJS templates via locals
+app.use((req, res, next) => {
+  res.locals.session = req.session;
+  next();
+});
+
 app.use(router);
 app.use(quizRouter);
 app.use(userRouter);

@@ -16,7 +16,7 @@
                 </a>
             </div>
             <div>
-                <a href="/login">
+                <a href="<%= locals.session && locals.session.userId ? '/profile' : '/login' %>">
                 <img class = "profile" src="/images/Profile.png" alt="Profile">
                 </a>
             </div>

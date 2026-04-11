@@ -1,4 +1,5 @@
 import { Router, type Request, type Response } from 'express';
+import { profileGet } from '../controllers/userController.js';
 
 const router = Router();
 
@@ -34,9 +35,7 @@ router.get('/madrid/quiz', (_req: Request, res: Response) => {
   res.render('madridQuiz');
 });
 
-router.get('/profile', (_req: Request, res: Response) => {
-  res.render('profile');
-});
+router.get('/profile', profileGet);
 
 
 export default router;
