@@ -3,6 +3,10 @@ import { profileGet } from '../controllers/userController.js';
 
 const router = Router();
 
+router.get('/wip', (_req: Request, res: Response) => {
+  res.render('wip');
+});
+
 router.get('/', (_req: Request, res: Response) => {
   res.redirect('/home');
 });

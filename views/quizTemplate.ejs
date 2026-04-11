@@ -10,7 +10,7 @@
                         <legend class="questionTitle"><%= q.questionText %></legend>
                         <% for(let answer of q.answers) { %>
                             <label class="quizLabel">
-                                <input type="radio" name="<%=q.questionId%>" value="<%= answer.answerID %>">
+                                <input type="radio" name="<%=q.questionId%>" value="<%= answer.answerId %>">
                                 <%= answer.answerText %>
                             </label>
                         <% } %>

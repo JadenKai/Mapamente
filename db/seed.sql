@@ -4,6 +4,11 @@ TRUNCATE TABLE Question;
 TRUNCATE TABLE City;
 SET FOREIGN_KEY_CHECKS = 1;
 
+-- User
+INSERT INTO User (username, passwordHash, profilePic) VALUES (
+  "testUser", "nomamesguey", "nomamesguey"
+);
+
 -- City
 INSERT INTO City (cityName, historyText, factsText, cityBanner) VALUES (
   'Austin',
