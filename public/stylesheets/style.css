@@ -98,7 +98,7 @@ p {
 }
 
 .formInput{
-  color: var(--dark-text);
+  color: black;
 }
 
 input[type="submit"] {

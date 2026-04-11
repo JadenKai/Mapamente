@@ -3,7 +3,7 @@
             <%=cityName%>
         </header>
         <div class="questionsBox">
-            <form action="/quizSubmission" method="post" > <!-- Should return "questionId"="answerID" -->
+            <form action="/quizSubmission" method="post" > <!-- Should return: { "a questionId as a string": "chosen answerID as a string", etc } -->
                 <br>
                 <% for(let q of quizQuestions) {%>
                     <fieldset class="question">
