@@ -1,4 +1,5 @@
 import express from 'express';
+import session from 'express-session';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import router from './routes/routes.js';
@@ -17,8 +18,18 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(dirname, 'views'));
+
 app.use(express.static(path.join(dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
+
+const secret = process.env.SESSION_SECRET;
+if (!secret) throw new Error("SESSION_SECRET environment variable is not set");
+app.use(session({
+  secret,
+  resave: false,
+  saveUninitialized: false,
+}));
+
 app.use(router);
 app.use(quizRouter);
 app.use(userRouter);

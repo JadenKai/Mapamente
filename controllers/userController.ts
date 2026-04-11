@@ -49,7 +49,7 @@ async function loginPost(req: Request, res: Response): Promise<void> {
     return;
   }
 
-  // TODO: establish session here once express-session is added
+  req.session.userId = user.userId;
   res.redirect("/profile");
 }
 

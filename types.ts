@@ -1,4 +1,10 @@
-import type { RowDataPacket, ResultSetHeader } from 'mysql2';
+import type { RowDataPacket } from 'mysql2';
+
+declare module 'express-session' {
+  interface SessionData {
+    userId: number;
+  }
+}
 
 interface Answer {
   answerId: number;
