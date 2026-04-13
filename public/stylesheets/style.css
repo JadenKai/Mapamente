@@ -80,7 +80,7 @@ p {
   height: auto;
 }
 
-.leaderboardTable{
+.statsTable{
   border-collapse: collapse;
   border: 2px solid black;
   border-radius: var(--dark-text);
@@ -176,7 +176,6 @@ label:hover {
 .cityTitles {
   font-size: 5vh;
   text-align: center;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/Madrid.jpg);
   background-size: cover;
   color: var(--light-text);
   padding: 10px;
