@@ -16,9 +16,18 @@ async function pullTop10OfUser(userId: number): Promise<ScoreEntry[]>{
     return(rows);
 }
 
-async function pullTop10OfCity(userId: number): Promise<ScoreEntry[]>{
-    const rows = (await pool.query<ScoreEntry[]>("SELECT userId, cityId, MAX(score) as score " + 
-        "FROM Score WHERE cityId = ? GROUP BY userId ORDER BY score DESC LIMIT 10;",userId))[0];
+async function pullTop10OfCity(cityId: number): Promise<ScoreEntry[]>{
+    const rows = (await pool.query<ScoreEntry[]>(
+        `SELECT s.userId, s.cityId, s.correctCount, s.score
+         FROM Score s
+         INNER JOIN (
+             SELECT userId, MAX(score) as maxScore
+             FROM Score WHERE cityId = ? GROUP BY userId
+         ) m ON s.userId = m.userId AND s.score = m.maxScore
+         WHERE s.cityId = ?
+         ORDER BY s.score DESC LIMIT 10`,
+        [cityId, cityId]
+    ))[0];
     return(rows);
 }
 
