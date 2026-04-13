@@ -33,7 +33,8 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - ./db/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - ./db/01_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+      - ./db/02_data.sql:/docker-entrypoint-initdb.d/02_data.sql
       - db_data:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
