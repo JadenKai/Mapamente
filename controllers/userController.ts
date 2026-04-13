@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import { createUser, findUserByUsername, findUserById } from "../models/userModel.js";
+import { getTop10OfUser } from "./scoreController.js";
 
 const SALT_ROUNDS = 12;
 
@@ -66,8 +67,8 @@ async function profileGet(req: Request, res: Response): Promise<void> {
     res.redirect("/login");
     return;
   }
-
-  res.render("profile", { user });
+  
+  res.render("profile", { user, scores: getTop10OfUser(user.userId)});
 }
 
 export {
