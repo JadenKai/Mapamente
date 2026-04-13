@@ -14,7 +14,7 @@ INSERT INTO City (cityName, historyText, factsText, cityBanner) VALUES (
   'Austin',
   'Austin was founded in 1839 and became the capital of the Republic of Texas. It grew rapidly during the 20th century and is now one of the fastest-growing cities in the US.',
   'Austin is home to the University of Texas, South by Southwest festival, and is known as the Live Music Capital of the World.',
-  'austin_banner.jpg'
+  'austin_banner.png'
 );
 
 -- Questions (cityId = 1)
