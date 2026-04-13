@@ -17,7 +17,7 @@ async function returnQuiz(req: Request, res:Response){
 
     uploadScore({
         scoreId:-1, 
-        userId:1, //Change when cookies or environment works
+        userId:req.session.userId, 
         cityId:(await getCityIdByQuestionId(Number(Object.entries(req.body)[0][0]))),
         correctCount: corrects,
         score: corrects*1000

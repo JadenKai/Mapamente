@@ -22,6 +22,13 @@ interface UserResponse {
   answerId: number;
 }
 
+interface Score {
+  username : string;
+  correctCount: number;
+  score: number;
+  cityName: string;
+}
+
 interface CityEntry extends RowDataPacket {
   cityId: number;
   cityName: string;
@@ -69,5 +76,6 @@ export {
   UserEntry,
   QuestionEntry,
   AnswerEntry,
-  ScoreEntry
+  ScoreEntry,
+  Score
 }

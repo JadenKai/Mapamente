@@ -5,6 +5,8 @@ import path from 'path';
 import router from './routes/routes.js';
 import quizRouter from './routes/quizRoutes.js';
 import userRouter from './routes/userRoutes.js';
+import scoreRouter from './routes/scoreRoutes.js';
+
 
 // UNECESSARY: only needed if running outside of docker.
 // try { process.loadEnvFile('.env'); } catch { /* no .env file */ }
@@ -39,6 +41,8 @@ app.use((req, res, next) => {
 app.use(router);
 app.use(quizRouter);
 app.use(userRouter);
+app.use(scoreRouter);
+
 
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
