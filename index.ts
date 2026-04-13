@@ -6,6 +6,7 @@ import router from './routes/routes.js';
 import quizRouter from './routes/quizRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import scoreRouter from './routes/scoreRoutes.js';
+import cityRouter from './routes/cityRoutes.js';
 
 
 // UNECESSARY: only needed if running outside of docker.
@@ -42,6 +43,7 @@ app.use(router);
 app.use(quizRouter);
 app.use(userRouter);
 app.use(scoreRouter);
+app.use(cityRouter);
 
 
 app.listen(port, hostname, () => {

@@ -1,0 +1,23 @@
+<%- include('partials/header') %> <!-- Assuming I'm handed a cityName and a list of scores -->
+        <header class = "pageTitle">
+            <%=cityName%> Leaderboard
+        </header>
+        <div class="center">
+            <table class="statsTable">
+                <thead>
+                    <tr>
+                        <th colspan="3" style="padding:5px;">Top 10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let s of scores) {%>
+                    <tr>
+                        <td style="padding: 5px;"><%=s.username%></td>
+                        <td style="padding: 5px;"><%=s.correctCount%></td>
+                        <td style="padding: 5px;"><%=s.score%></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+<%- include('partials/footer') %>

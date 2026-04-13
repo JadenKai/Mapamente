@@ -1,0 +1,8 @@
+import { Router } from "express";
+import * as Controller from "../controllers/cityController.js"
+console.log('quizRoutes loaded');
+const router = Router();
+
+router.get("/wiki/:id", Controller.supplyCity)
+
+export default router;

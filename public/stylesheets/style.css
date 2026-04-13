@@ -79,6 +79,22 @@ p {
   width: 15vw;
   height: auto;
 }
+
+.statsTable{
+  border-collapse: collapse;
+  border: 2px solid black;
+  border-radius: var(--dark-text);
+  padding:5x;
+  margin: 20px;
+  width: 800px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding:5x;
+  background-color: var(--question-box-color);
+}
+
 /*For login and signup pages:*/
 .formBox{
   display: inline-block;
@@ -163,7 +179,6 @@ label:hover {
 .cityTitles {
   font-size: 5vh;
   text-align: center;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/Madrid.jpg);
   background-size: cover;
   color: var(--light-text);
   padding: 10px;
@@ -192,18 +207,6 @@ label:hover {
   display: flex;
   justify-content: center;
   text-decoration: none;
-}
-
-.settingsBox{
-  flex:1;
-  display: inline-block;
-  border:black;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 10px;
-  margin: 10px;
-  background-color: var(--button-color);
-  justify-content: center;
 }
 
 .cityRow {
