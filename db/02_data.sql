@@ -713,3 +713,136 @@ INSERT INTO Answer (questionId, answerText, isCorrect) VALUES
 (100, 'Bolivia, Chile, and Peru',             false),
 (100, 'Colombia, Venezuela, and Ecuador',     false),
 (100, 'Chile, Bolivia, and Argentina',        false);
+
+-- City
+INSERT INTO City (cityName, historyText, factsText, cityBanner) VALUES (
+  'Austin',
+  'Austin was founded in 1839 by Mirabeau Lamar, president of the Republic of Texas, who envisioned a grand capital city nestled along the Colorado River in the heart of the Texas Hill Country. Named after Stephen F. Austin, the "Father of Texas," the city was chosen for its central location and scenic surroundings, and it became the official capital of the Republic of Texas that same year. After Texas was annexed by the United States in 1845, Austin retained its role as the state capital, cementing its political importance for generations to come. Through the late 19th century, the city grew steadily, marked by the construction of the iconic Texas State Capitol building in 1888 — a structure that remains the largest state capitol by ground area in the country. Austin grew rapidly during the 20th century, fueled in part by the expanding influence of the University of Texas, founded in 1883, which attracted students, researchers, and eventually a thriving tech industry. By the latter half of the century, Austin had earned the nickname "Silicon Hills" as major technology companies like Dell, Apple, and later Tesla established major operations in the area. Today, Austin is one of the fastest-growing cities in the US, celebrated for its vibrant live music scene, diverse culture, and booming economy — a dynamic metropolis that has never lost sight of its rich historical roots.',
+  'Austin is home to the University of Texas, one of the largest public universities in the nation with over 50,000 students, which anchors the city''s reputation as a hub for research, innovation, and education. The city hosts the world-renowned South by Southwest festival every March, drawing hundreds of thousands of visitors for a sprawling celebration of music, film, technology, and culture that has become one of the most influential creative gatherings on the planet. True to its nickname, the Live Music Capital of the World, Austin boasts more live music venues per capita than nearly any other city, with the legendary Sixth Street Entertainment District and the eclectic Red River Cultural District serving as the beating heart of its thriving music scene. Beyond the arts, Austin has emerged as a major technology and business powerhouse, with companies like Tesla, Apple, Google, and Oracle all maintaining significant presences in the city, drawing a steady influx of young professionals and entrepreneurs. The city is also famous for its beloved local food culture, particularly its celebrated barbecue traditions, vibrant Tex-Mex cuisine, and a thriving farm-to-table restaurant scene. With a population now surpassing one million residents in the city proper and nearly two million in the greater metro area, Austin consistently ranks among the top cities in the country for quality of life, job growth, and economic opportunity, all while working to preserve the creative, laid-back spirit captured in its unofficial motto: "Keep Austin Weird."',
+  'austin_banner.png'
+);
+
+-- Austin (cityId = 11)
+INSERT INTO Question (cityId, questionText) VALUES
+(11, 'What is Austin''s unofficial motto?'),
+(11, 'In what year was Austin founded?'),
+(11, 'What university is located in Austin?'),
+(11, 'What river runs through Austin?'),
+(11, 'What is Austin known as the capital of?'),
+(11, 'What famous music festival is held in Austin every year?'),
+(11, 'What is the name of Austin''s airport?'),
+(11, 'What is the tallest building in Austin?'),
+(11, 'What expressway is commonly known as the main loop around Austin?'),
+(11, 'What is the name of Austin''s famous bat colony location?'),
+(11, 'What sport does Austin FC play?'),
+(11, 'What is the name of Austin''s Formula 1 track?'),
+(11, 'What state is Austin the capital of?'),
+(11, 'What is the name of the famous Austin music venue on 6th Street?'),
+(11, 'What major tech company moved its headquarters to Austin?'),
+(11, 'What is the name of the large park along the Colorado River in Austin?'),
+(11, 'What neighborhood is known as Austin''s tech hub?'),
+(11, 'What is the name of Austin''s NBA G League team?'),
+(11, 'Approximately what is Austin''s current city population?'),
+(11, 'What is the name of the famous taco spot on East Cesar Chavez?');
+
+INSERT INTO Answer (questionId, answerText, isCorrect) VALUES
+-- Q101
+(101, 'Keep Austin Weird', true),
+(101, 'Live Free or Die', false),
+(101, 'Keep It Real', false),
+(101, 'Austin Strong', false),
+-- Q102
+(102, '1839', true),
+(102, '1821', false),
+(102, '1865', false),
+(102, '1901', false),
+-- Q103
+(103, 'University of Texas', true),
+(103, 'Texas A&M', false),
+(103, 'Baylor University', false),
+(103, 'Rice University', false),
+-- Q104
+(104, 'Colorado River', true),
+(104, 'Brazos River', false),
+(104, 'Rio Grande', false),
+(104, 'Guadalupe River', false),
+-- Q105
+(105, 'Live Music Capital of the World', true),
+(105, 'Country Music Capital', false),
+(105, 'Jazz Capital of the South', false),
+(105, 'Rock and Roll Capital', false),
+-- Q106
+(106, 'South by Southwest (SXSW)', true),
+(106, 'Coachella', false),
+(106, 'Austin City Limits only', false),
+(106, 'Lollapalooza', false),
+-- Q107
+(107, 'Austin-Bergstrom International Airport', true),
+(107, 'Austin Executive Airport', false),
+(107, 'Texas Capital Airport', false),
+(107, 'Lone Star Airport', false),
+-- Q108
+(108, 'Indeed Tower', true),
+(108, 'Frost Bank Tower', false),
+(108, '360 Condominiums', false),
+(108, 'One Congress Plaza', false),
+-- Q109
+(109, 'MoPac Expressway (Loop 1)', true),
+(109, 'Loop 410', false),
+(109, 'Loop 202', false),
+(109, 'Highway 130', false),
+-- Q110
+(110, 'Congress Avenue Bridge', true),
+(110, 'South Lamar Bridge', false),
+(110, 'Pfluger Pedestrian Bridge', false),
+(110, 'First Street Bridge', false),
+-- Q111
+(111, 'Soccer', true),
+(111, 'Basketball', false),
+(111, 'Baseball', false),
+(111, 'Hockey', false),
+-- Q112
+(112, 'Circuit of the Americas', true),
+(112, 'Texas Motor Speedway', false),
+(112, 'Austin International Raceway', false),
+(112, 'Lone Star Circuit', false),
+-- Q113
+(113, 'Texas', true),
+(113, 'Oklahoma', false),
+(113, 'New Mexico', false),
+(113, 'Louisiana', false),
+-- Q114
+(114, 'Stubb''s Amphitheater', true),
+(114, 'The Alamo', false),
+(114, 'Red Rocks Austin', false),
+(114, 'The Paramount', false),
+-- Q115
+(115, 'Tesla', true),
+(115, 'Apple', false),
+(115, 'Google', false),
+(115, 'Amazon', false),
+-- Q116
+(116, 'Zilker Park', true),
+(116, 'Barton Springs Park', false),
+(116, 'Auditorium Shores', false),
+(116, 'McKinney Falls Park', false),
+-- Q117
+(117, 'The Domain', true),
+(117, 'South Congress', false),
+(117, 'East 6th Street', false),
+(117, 'Rainey Street', false),
+-- Q118
+(118, 'Austin Spurs', true),
+(118, 'Austin Aces', false),
+(118, 'Texas Legends', false),
+(118, 'Capitol City Ballers', false),
+-- Q119
+(119, 'Over 1 million', true),
+(119, 'About 500,000', false),
+(119, 'About 750,000', false),
+(119, 'About 2 million', false),
+-- Q120
+(120, 'Juan in a Million', true),
+(120, 'Torchy''s Tacos', false),
+(120, 'Veracruz All Natural', false),
+(120, 'Joe''s Tacos', false);
