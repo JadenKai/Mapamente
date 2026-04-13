@@ -8,7 +8,7 @@ import { getCityById } from '../models/cityModel.js';
 
 async function supply10FromCity(req: Request, res: Response){
     const cityId = Number(req.params['id'] as string);
-    const top10 = (await Model.pullTop10OfCity(cityId)).map(entry => convertScoreEntryToScore(entry));
+    const top10 = await Promise.all((await Model.pullTop10OfCity(cityId)).map(entry => convertScoreEntryToScore(entry)));
     res.render('leaderboardTemplate', {scores:top10,cityName: (await getCityById(cityId)).cityName});
 }
 

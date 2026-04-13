@@ -14,15 +14,18 @@ async function returnQuiz(req: Request, res:Response){
     for(let [_,answerId] of Object.entries(answerInfo)){
         corrects = corrects + Number((await Model.checkCorrectAnswer(Number(answerId))));
     }
-
-    uploadScore({
+    const cityId = (await getCityIdByQuestionId(Number(Object.entries(req.body)[0][0])))
+    const userId = req.session.userId
+    if(userId){
+        uploadScore({
         scoreId:-1, 
-        userId:req.session.userId, 
-        cityId:(await getCityIdByQuestionId(Number(Object.entries(req.body)[0][0]))),
+        userId: userId, 
+        cityId: cityId,
         correctCount: corrects,
         score: corrects*1000
     } as ScoreEntry)
-    res.redirect("wip")
+    }
+    res.redirect("leaderboard/" + cityId)
 }
 
 async function produceQuiz(req: Request, res: Response){
