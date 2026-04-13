@@ -31,11 +31,11 @@ INSERT INTO City (cityName, historyText, factsText, cityBanner) VALUES
 
 ('Lima',
  'Lima was founded by Spanish conquistador Francisco Pizarro on January 18, 1535, originally named Ciudad de los Reyes. It quickly became the capital of the Viceroyalty of Peru and the center of Spanish power across South America. A powerful earthquake devastated the city in 1746, killing 5,000 people, though it was later rebuilt. Peru became the last mainland Spanish colony to declare independence in July 1821, with Lima remaining its capital.',
- 'Lima is home to the National University of San Marcos, the oldest university in South America, chartered in 1551. The city\'s historic center was designated a UNESCO World Heritage site in 1988. Lima accounts for about one-quarter of Peru\'s total population and is nicknamed El Pulpo (The Octopus) for its dominant role in the country. The city sits on the south bank of the Rímac River, whose Quechua name means Talker.',
+ 'Lima is home to the National University of San Marcos, the oldest university in South America, chartered in 1551. The city''s historic center was designated a UNESCO World Heritage site in 1988. Lima accounts for about one-quarter of Peru''s total population and is nicknamed El Pulpo (The Octopus) for its dominant role in the country. The city sits on the south bank of the Rímac River, whose Quechua name means Talker.',
  'LimaBanner.jpg'),
 
 ('Cartagena',
- 'Cartagena de Indias was founded by the Spaniard Pedro de Heredia in 1533 on the northern Caribbean coast of Colombia. It became one of the major naval and merchant marine bases of the Spanish empire and held a monopoly on the slave trade to Spanish South America, with approximately 120,000 enslaved Africans arriving between the 16th and 18th centuries. The province declared independence from Spain in 1811. The opening of petroleum fields in the Magdalena River valley after 1917 revitalized the city\'s economy.',
+ 'Cartagena de Indias was founded by the Spaniard Pedro de Heredia in 1533 on the northern Caribbean coast of Colombia. It became one of the major naval and merchant marine bases of the Spanish empire and held a monopoly on the slave trade to Spanish South America, with approximately 120,000 enslaved Africans arriving between the 16th and 18th centuries. The province declared independence from Spain in 1811. The opening of petroleum fields in the Magdalena River valley after 1917 revitalized the city''s economy.',
  'Cartagena is the capital of Bolívar department in northern Colombia. The 17th-century fortress of San Felipe de Barajas is one of its most iconic landmarks. Nearby San Basilio de Palenque, founded by escaped enslaved Africans, was granted freedom by the Spanish Crown in 1691, making it one of the first free African towns in the Americas. Its residents speak Palenquero, a Spanish-based creole language that is unique to the community.',
  'CartagenaBanner.jpg'),
 
@@ -50,7 +50,7 @@ INSERT INTO City (cityName, historyText, factsText, cityBanner) VALUES
  'PotosíBanner.jpg'),
 
 ('Mérida',
- 'In 1542 Spanish conquistador Francisco de Montejo founded Mérida on the site of the ancient Maya city T\'ho (Tihoo), making it an early base for Spanish efforts to conquer the Maya. In the 19th century its economy was driven by henequen, a fibrous plant used to produce twine and rope, which made Mérida one of Mexico\'s most important commercial cities by the early 20th century. The henequen trade declined precipitously after World War II. Many former plantations now grow citrus fruits.',
+ 'In 1542 Spanish conquistador Francisco de Montejo founded Mérida on the site of the ancient Maya city T''ho (Tihoo), making it an early base for Spanish efforts to conquer the Maya. In the 19th century its economy was driven by henequen, a fibrous plant used to produce twine and rope, which made Mérida one of Mexico''s most important commercial cities by the early 20th century. The henequen trade declined precipitously after World War II. Many former plantations now grow citrus fruits.',
  'Mérida is the capital of the state of Yucatán in southeastern Mexico and lies about 20 miles south of its Gulf of Mexico port, Progreso. The city is a gateway to major Mayan archaeological sites including Chichén Itzá, Uxmal, and Kabah. The Casa de Montejo, built in 1549, and the cathedral, begun in 1561, are among its notable colonial-era buildings. The Regional Museum of Anthropology, opened in 1920, exhibits Olmec and Mayan artifacts.',
  'MéridaBanner.jpg'),
 
@@ -77,9 +77,9 @@ INSERT INTO Question (cityId, questionText) VALUES
 (1, 'What major international sporting event did Mexico City host in 1968?'),
 (1, 'Which iconic public park in Mexico City is the oldest public park in the Americas?'),
 (1, 'Which tectonic plate slides beneath the North American plate near Mexico City?'),
-(1, 'Which famous muralist\'s works are displayed inside the Palacio Nacional?'),
+(1, 'Which famous muralist''s works are displayed inside the Palacio Nacional?'),
 (1, 'What is the approximate population of the Mexico City metropolitan area?'),
-(1, 'What percentage of Mexico\'s national GDP does Mexico City contribute through its service sector?'),
+(1, 'What percentage of Mexico''s national GDP does Mexico City contribute through its service sector?'),
 
 -- Buenos Aires (cityId = 2)
 (2, 'What does the name Buenos Aires translate to in English?'),
@@ -98,10 +98,10 @@ INSERT INTO Question (cityId, questionText) VALUES
 (3, 'In what year did Barcelona host the Summer Olympic Games?'),
 (3, 'What is the name of the famous unfinished church designed by Antoni Gaudí?'),
 (3, 'Barcelona is the capital of which Spanish autonomous community?'),
-(3, 'What is the name of FC Barcelona\'s famous youth academy?'),
-(3, 'Approximately what share of Spain\'s industrial output does the Barcelona area provide?'),
+(3, 'What is the name of FC Barcelona''s famous youth academy?'),
+(3, 'Approximately what share of Spain''s industrial output does the Barcelona area provide?'),
 (3, 'Which king besieged and captured Barcelona in 1714?'),
-(3, 'What is the name of Barcelona\'s iconic tree-lined pedestrian mall?'),
+(3, 'What is the name of Barcelona''s iconic tree-lined pedestrian mall?'),
 (3, 'What role did Barcelona play during the Spanish Civil War from 1936 to 1939?'),
 (3, 'What is the name of the rivalry match between FC Barcelona and Real Madrid?'),
 
@@ -110,7 +110,7 @@ INSERT INTO Question (cityId, questionText) VALUES
 (4, 'In what year did European settlement begin in Bogotá?'),
 (4, 'At what altitude does Bogotá sit above sea level?'),
 (4, 'What is the name of the main historic central square in Bogotá?'),
-(4, 'Which museum in Bogotá holds the world\'s finest collection of worked gold?'),
+(4, 'Which museum in Bogotá holds the world''s finest collection of worked gold?'),
 (4, 'Which airline headquartered in Bogotá was the first commercial airline in South America?'),
 (4, 'Whose military campaigns led Colombia to independence in 1819?'),
 (4, 'What nickname is commonly used for Bogotá due to its universities and cultural institutions?'),
@@ -118,15 +118,15 @@ INSERT INTO Question (cityId, questionText) VALUES
 (4, 'Colombian artist Fernando Botero is internationally known for what style of art?'),
 
 -- Lima (cityId = 5)
-(5, 'Lima\'s name is a corruption of which Quechua word meaning Talker?'),
+(5, 'Lima''s name is a corruption of which Quechua word meaning Talker?'),
 (5, 'Who founded Lima on January 18, 1535?'),
 (5, 'What distinction does the National University of San Marcos in Lima hold?'),
-(5, 'In what year was Lima\'s historic center designated a UNESCO World Heritage site?'),
+(5, 'In what year was Lima''s historic center designated a UNESCO World Heritage site?'),
 (5, 'What major disaster nearly destroyed Lima in 1746?'),
-(5, 'Why did the Spanish choose Lima\'s coastal location over the Inca capital of Cuzco?'),
+(5, 'Why did the Spanish choose Lima''s coastal location over the Inca capital of Cuzco?'),
 (5, 'In what year did Peru become the last mainland Spanish colony to declare independence?'),
 (5, 'What popular nickname does Lima have that reflects its dominant role in Peru?'),
-(5, 'Approximately what fraction of Peru\'s total population lives in metropolitan Lima?'),
+(5, 'Approximately what fraction of Peru''s total population lives in metropolitan Lima?'),
 (5, 'What style heavily influenced the rebuilding of Lima after 1746?'),
 
 -- Cartagena (cityId = 6)
@@ -149,32 +149,32 @@ INSERT INTO Question (cityId, questionText) VALUES
 (7, 'What is the name of the 15th-century collegiate church in Valladolid that now houses a wood sculpture museum?'),
 (7, 'From which reign did Valladolid serve as the seat of the Spanish royal court?'),
 (7, 'Which famous Spanish king was born in Valladolid on May 21, 1527?'),
-(7, 'Which major modern industry anchors Valladolid\'s economy today?'),
+(7, 'Which major modern industry anchors Valladolid''s economy today?'),
 (7, 'What is northern Valladolid province historically known as for its agricultural role?'),
 (7, 'In what year does the first recorded mention of Valladolid appear?'),
 
 -- Potosí (cityId = 8)
 (8, 'In what year was Potosí established on the slopes of Cerro Rico?'),
-(8, 'What was Potosí\'s approximate population at its mid-17th-century peak?'),
+(8, 'What was Potosí''s approximate population at its mid-17th-century peak?'),
 (8, 'At what approximate elevation does Potosí sit?'),
 (8, 'In what year was Potosí designated a UNESCO World Heritage site?'),
 (8, 'What is the name of the historic colonial mint in Potosí that now houses a museum?'),
 (8, 'What does Cerro Rico translate to in English?'),
 (8, 'By approximately how much did silver production at Potosí decline between 1803 and 1825?'),
 (8, 'What system of conscripted Indigenous labor was used to work the Potosí silver mines?'),
-(8, 'Potosí\'s silver mines greatly enriched which empire?'),
+(8, 'Potosí''s silver mines greatly enriched which empire?'),
 (8, 'The Church of San Lorenzo in Potosí is notable for which architectural style on its facade?'),
 
 -- Mérida (cityId = 9)
-(9, 'In what year did Francisco de Montejo found Mérida on the site of the ancient Maya city T\'ho?'),
-(9, 'What fibrous plant drove Mérida\'s economy throughout the 19th and early 20th centuries?'),
+(9, 'In what year did Francisco de Montejo found Mérida on the site of the ancient Maya city T''ho?'),
+(9, 'What fibrous plant drove Mérida''s economy throughout the 19th and early 20th centuries?'),
 (9, 'Mérida serves as the capital of which Mexican state?'),
 (9, 'Which world-famous Mayan archaeological site is accessible on day trips from Mérida?'),
 (9, 'When was the Autonomous University of Yucatán in Mérida founded?'),
 (9, 'What happened to the henequen trade after World War II?'),
 (9, 'In what year was the Casa de Montejo in Mérida built?'),
 (9, 'What type of crops now grow on many former henequen plantations around Mérida?'),
-(9, 'What two pre-Columbian civilizations are represented in Mérida\'s Regional Museum of Anthropology?'),
+(9, 'What two pre-Columbian civilizations are represented in Mérida''s Regional Museum of Anthropology?'),
 (9, 'How far south of its Gulf of Mexico port Progreso does Mérida lie?'),
 
 -- Asunción (cityId = 10)
@@ -184,7 +184,7 @@ INSERT INTO Question (cityId, questionText) VALUES
 (10, 'Which famous Parisian landmark is the Pantheon of Heroes in Asunción modeled after?'),
 (10, 'Which religious order established mission settlements on the Paraná River near Asunción in 1588?'),
 (10, 'Where does Asunción sit on the Paraguay River?'),
-(10, 'What is Paraguay\'s official language alongside Spanish?'),
+(10, 'What is Paraguay''s official language alongside Spanish?'),
 (10, 'In what year did General Alfredo Stroessner seize power in Paraguay?'),
 (10, 'Which is the largest national university in Asunción, founded in 1890?'),
 (10, 'Paraguay fought the War of the Triple Alliance against which three countries?');
