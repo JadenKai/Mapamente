@@ -1,6 +1,5 @@
 <%- include('partials/header') %> <!-- Assumming I'm passed a CityEntry object as city -->
-    <header class = "cityTitles" style="background-image: radial-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/Madrid.jpg);">
-        <!-- Change Madrid url to <%=city.cityBanner%> -->
+    <header class = "cityTitles" style="background-image: radial-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), url(../images/<%=city.cityBanner%>);">
         <%=city.cityName%>
     </header>
     <p class="wikiHeader">

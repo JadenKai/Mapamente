@@ -3,6 +3,6 @@ import * as Controller from "../controllers/cityController.js"
 console.log('quizRoutes loaded');
 const router = Router();
 
-router.get("/city/:id", Controller.supplyCity)
+router.get("/wiki/:id", Controller.supplyCity)
 
 export default router;
