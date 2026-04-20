@@ -1,3 +1,5 @@
+-- Testing information Exclusively
+
 SET FOREIGN_KEY_CHECKS = 0;
 TRUNCATE TABLE Answer;
 TRUNCATE TABLE Question;
