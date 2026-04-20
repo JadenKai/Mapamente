@@ -6,22 +6,20 @@ declare module 'express-session' {
   }
 }
 
+//Type to pass around answer information without passing around answers
 interface Answer {
   answerId: number;
   answerText: string;
 }
 
+//Type to pass around, including the Answers as part of the question
 interface Question {
   questionId: number;
   questionText: string;
   answers: Answer[];
 }
 
-interface UserResponse {
-  questionId: number;
-  answerId: number;
-}
-
+//Type to keep track of the information that needs to be displayed on leaderboard
 interface Score {
   username : string;
   correctCount: number;
@@ -29,6 +27,7 @@ interface Score {
   cityName: string;
 }
 
+//Function that represents a Database entry in the City database
 interface CityEntry extends RowDataPacket {
   cityId: number;
   cityName: string;
@@ -37,6 +36,7 @@ interface CityEntry extends RowDataPacket {
   cityBanner: string;
 }
 
+//Function that represents a Database entry in the User database
 interface UserEntry extends RowDataPacket {
   userId: number;
   username: string;
@@ -47,12 +47,14 @@ interface UserEntry extends RowDataPacket {
   themeLight: boolean;
 }
 
+//Function that represents a Database entry in the Question database
 interface QuestionEntry extends RowDataPacket {
   questionId: number;
   cityId: number;
   questionText: string;
 }
 
+//Function that represents a Database entry in the Answer database
 interface AnswerEntry extends RowDataPacket {
   answerId: number;
   questionId: number;
@@ -60,6 +62,7 @@ interface AnswerEntry extends RowDataPacket {
   isCorrect: boolean;
 }
 
+//Function that represents a Database entry in the Score database
 interface ScoreEntry extends RowDataPacket {
   scoreId: number;
   userId: number;
@@ -71,7 +74,6 @@ interface ScoreEntry extends RowDataPacket {
 export {
   Answer,
   Question,
-  UserResponse,
   CityEntry,
   UserEntry,
   QuestionEntry,

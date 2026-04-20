@@ -1,3 +1,5 @@
+//Archaic File, in theory this should be replaced at some point.
+
 import { Router, type Request, type Response } from 'express';
 import { profileGet } from '../controllers/userController.js';
 
