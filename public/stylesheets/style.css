@@ -9,6 +9,10 @@
   --answer-hover-color: rgb(159,133,96);
   --shadow-color: rgba(0,0,0,0);
   --footer-color: rgb(121, 103, 74);
+  /*Possibly change these?*/
+  --timer-safe: #1D9E75;
+  --timer-worry: #EF9F27;
+  --timer-urgent: #E24B4A;
 }
 /* Automatically uses dark variables if system settings are on dark mode: */
 @media (prefers-color-scheme: dark) { 
@@ -23,6 +27,10 @@
     --answer-hover-color: rgb(103, 111, 120);
     --shadow-color: rgba(0,0,0,0.5);
     --footer-color: rgb(83, 91, 100);
+    /*Possibly change these?*/
+    --timer-safe: #1D9E75;
+    --timer-worry: #EF9F27;
+    --timer-urgent: #E24B4A;
   }
 }
 
@@ -313,4 +321,29 @@ footer {
 .footerBullets {
   color: var(--light-text);
   font-size: 14px;
+}
+
+/* Timer bar!*/
+.timer-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--button-color); /* or whatever your quiz bg is */
+  padding: 12px 20px;
+  z-index: 999;
+  box-sizing: border-box;
+}
+
+.timer-track {
+  background: rgba(255,255,255,0.2);
+  border-radius: 99px;
+  height: 14px;
+  overflow: hidden;
+}
+
+#timer-bar {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.2s linear, background 0.4s ease;
 }
