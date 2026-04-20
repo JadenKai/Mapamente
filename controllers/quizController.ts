@@ -4,25 +4,33 @@ import { getCityById, getCityIdByQuestionId } from '../models/cityModel.js';
 import { uploadScore } from '../models/scoreModel.js';
 import { type Answer, type Question, type ScoreEntry} from "../types.js";
 
-async function defaultQuiz(req: Request, res: Response){
-    res.render("test")
-}
-
 async function returnQuiz(req: Request, res:Response){
     const answerInfo = req.body
     let corrects: number = 0;
-    for(let [_,answerId] of Object.entries(answerInfo)){
-        corrects = corrects + Number((await Model.checkCorrectAnswer(Number(answerId))));
+    // Take the first 10 elements (corresponding to the answers)
+    for(let [_,answerId] of Object.entries(answerInfo).slice(0,10)){
+        //Check the answer to see if it is correct
+        corrects += Number((await Model.checkCorrectAnswer(Number(answerId))));
     }
     const cityId = (await getCityIdByQuestionId(Number(Object.entries(req.body)[0][0])))
     const userId = req.session.userId
+
+    // Decreases linearly from max to the minimum amount of time then locks in the score multiplier
+    function scoreMultiplier(timeRemaining:number, minimum:number): number{
+        if(timeRemaining <= minimum) return minimum/30000;
+        return timeRemaining/30000
+    }
+
+    // Use the amount of corrects then multiply by the multiplier
+    const score = corrects*1000*scoreMultiplier(answerInfo["timeRemaining"],10000)
+    //console.log(corrects + " " + score + " " + answerInfo["timeRemaining"] + " " + scoreMultiplier(answerInfo["timeRemaining"],10000))
     if(userId){
         uploadScore({
         scoreId:-1, 
         userId: userId, 
         cityId: cityId,
         correctCount: corrects,
-        score: corrects*1000
+        score: score
     } as ScoreEntry)
     }
     res.redirect("leaderboard/" + cityId)
@@ -44,7 +52,6 @@ async function produceQuiz(req: Request, res: Response){
 }
 
 export {
-    defaultQuiz,
     returnQuiz,
     produceQuiz
 }

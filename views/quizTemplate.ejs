@@ -3,7 +3,8 @@
             <%=cityName%>
         </header>
         <div class="questionsBox">
-            <form action="/quizSubmission" method="post" > <!-- Should return: { "a questionId as a string": "chosen answerID as a string", etc } -->
+            <form id="quiz-form" action="/quizSubmission" method="post" > <!-- Should return: { "a questionId as a string": "chosen answerID as a string", etc } -->
+                <input type="hidden" name="timeRemaining" id="time-remaining-input" value="0">
                 <br>
                 <% for(let q of quizQuestions) {%>
                     <fieldset class="question">
@@ -22,4 +23,11 @@
             </form>
         </div>
         <br>
+        <div class="timer-container">
+            <div class="timer-track">
+                <div id="timer-bar"></div>
+            </div>
+            <span id="time-label">30</span>
+        </div>
+        <script src="/js/visualTimer.js"></script>
 <%- include('partials/footer') %>
