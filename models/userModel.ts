@@ -30,8 +30,18 @@ async function findUserById(userId: number): Promise<UserEntry | null> {
   return rows[0] ?? null;
 }
 
+// Set the profile picture
+async function updateUserProfilePic(userId: number, picBuffer: Buffer): Promise<boolean> {
+  const [result] = await pool.query<ResultSetHeader>(
+    "UPDATE User SET profilePic = ? WHERE userId = ?",
+    [picBuffer, userId]
+  );
+  return result.affectedRows === 1;
+}
+
 export {
   createUser,
   findUserByUsername,
   findUserById,
+  updateUserProfilePic,
 }

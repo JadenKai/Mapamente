@@ -1,7 +1,11 @@
 import { Request, Response } from "express";
 import bcrypt from "bcrypt";
-import { createUser, findUserByUsername, findUserById } from "../models/userModel.js";
+import multer from "multer";
+import sharp from "sharp";
+import { createUser, findUserByUsername, findUserById, updateUserProfilePic } from "../models/userModel.js";
 import { getTop10OfUser } from "./scoreController.js";
+
+const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
 
 const SALT_ROUNDS = 12;
 
@@ -73,8 +77,30 @@ async function profileGet(req: Request, res: Response): Promise<void> {
   res.render("profile", { user, scores: getTop10OfUser(user.userId)});
 }
 
+async function profilePhotoPost(req: Request, res: Response): Promise<void> {
+  if (!req.session.userId) {
+    res.redirect("/login");
+    return;
+  }
+
+  if (!req.file) {
+    res.redirect("/profile");
+    return;
+  }
+
+  const webpBuffer = await sharp(req.file.buffer)
+    .resize(200, 200, { fit: "cover" })
+    .webp()
+    .toBuffer();
+
+  await updateUserProfilePic(req.session.userId, webpBuffer);
+  res.redirect("/profile");
+}
+
 export {
   signupPost,
   loginPost,
   profileGet,
+  profilePhotoPost,
+  upload
 }

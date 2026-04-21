@@ -80,12 +80,16 @@ p {
 
 .profile {
   width: 5vw;
-  height: auto;
+  height: 5vw;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .profilePicture { /* For Profile Page */
   width: 15vw;
-  height: auto;
+  height: 15vw;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .statsTable{

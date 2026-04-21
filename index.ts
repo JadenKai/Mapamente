@@ -7,6 +7,7 @@ import quizRouter from './routes/quizRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import scoreRouter from './routes/scoreRoutes.js';
 import cityRouter from './routes/cityRoutes.js';
+import { findUserById } from './models/userModel.js';
 
 
 // UNECESSARY: only needed if running outside of docker.
@@ -40,6 +41,17 @@ app.use(session({
 // Expose session to all EJS templates via locals
 app.use((req, res, next) => {
   res.locals.session = req.session;
+  next();
+});
+
+// Load profile picture data URI into locals for all templates
+app.use(async (req, res, next) => {
+  if (req.session.userId) {
+    const user = await findUserById(req.session.userId);
+    if (user?.profilePic) {
+      res.locals.profilePicSrc = `data:image/webp;base64,${user.profilePic.toString('base64')}`;
+    }
+  }
   next();
 });
 
