@@ -5,6 +5,7 @@ import sharp from "sharp";
 import { createUser, findUserByUsername, findUserById, updateUserProfilePic } from "../models/userModel.js";
 import { getTop10OfUser } from "./scoreController.js";
 
+// Keep uploaded file in memory as a Buffer rather than writing to disk
 const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
 
 const SALT_ROUNDS = 12;
@@ -77,6 +78,7 @@ async function profileGet(req: Request, res: Response): Promise<void> {
   res.render("profile", { user, scores: getTop10OfUser(user.userId)});
 }
 
+// Handles profile picture upload: resizes to 200x200 WebP and stores raw bytes in the DB
 async function profilePhotoPost(req: Request, res: Response): Promise<void> {
   if (!req.session.userId) {
     res.redirect("/login");
@@ -88,6 +90,7 @@ async function profilePhotoPost(req: Request, res: Response): Promise<void> {
     return;
   }
 
+  // Crop and convert the uploaded image regardless of original format
   const webpBuffer = await sharp(req.file.buffer)
     .resize(200, 200, { fit: "cover" })
     .webp()

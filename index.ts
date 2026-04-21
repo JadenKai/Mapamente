@@ -44,7 +44,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Load profile picture data URI into locals for all templates
+// Decode the stored WebP blob into a base64 data URI so all templates can display it
 app.use(async (req, res, next) => {
   if (req.session.userId) {
     const user = await findUserById(req.session.userId);
