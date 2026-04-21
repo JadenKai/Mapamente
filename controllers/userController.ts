@@ -25,7 +25,9 @@ async function signupPost(req: Request, res: Response): Promise<void> {
 
   await createUser(username, await bcrypt.hash(password, SALT_ROUNDS));
 
-  res.redirect("/login");
+  const newUser = await findUserByUsername(username);
+  req.session.userId = newUser!.userId;
+  res.redirect("/profile");
 }
 
 async function loginPost(req: Request, res: Response): Promise<void> {
