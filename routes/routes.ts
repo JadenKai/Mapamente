@@ -1,7 +1,7 @@
 //Archaic File, in theory this should be replaced at some point.
 
 import { Router, type Request, type Response } from 'express';
-import { profileGet } from '../controllers/userController.js';
+import { profileGet, profilePhotoPost, upload } from '../controllers/userController.js';
 
 const router = Router();
 
@@ -42,6 +42,6 @@ router.get('/madrid/quiz', (_req: Request, res: Response) => {
 });
 
 router.get('/profile', profileGet);
-
+router.post('/profile/photo', upload.single('photo'), profilePhotoPost);
 
 export default router;

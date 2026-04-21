@@ -13,7 +13,7 @@ CREATE TABLE User (
     userId       INT AUTO_INCREMENT PRIMARY KEY,
     username     VARCHAR(50)  NOT NULL UNIQUE,
     passwordHash VARCHAR(255) NOT NULL,
-    profilePic   VARCHAR(255),
+    profilePic   MEDIUMBLOB,
     isPublic     BOOLEAN      NOT NULL DEFAULT true,
     isAdmin      BOOLEAN      NOT NULL DEFAULT false,
     themeLight   BOOLEAN      NOT NULL DEFAULT true

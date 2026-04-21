@@ -5,7 +5,7 @@
         <div style="display:flex; margin:20px; gap:20px;">
             <div style="flex:2;">
                 <div class="center">
-                    <img class = "profilePicture" src="/images/Profile.png" alt="Profile">
+                    <img class="profilePicture" src="<%= locals.profilePicSrc || '/images/Profile.png' %>" alt="Profile">
                 </div>
                 <br>
                 <div class="center">
@@ -13,9 +13,8 @@
                         Upload new photo
                     </button>
                 </div>
-                <!--The following form needs npm install multer and npm install --save-dev @types/multer-->
-                <form id="photoForm" action="/profile/photo" method="POST" enctype="multipart/form-data">
-                    <input type="file" id="photoUploadInput" accept="image/*" style="display:none;">
+                    <form id="photoForm" action="/profile/photo" method="POST" enctype="multipart/form-data">
+                    <input type="file" id="photoUploadInput" name="photo" accept="image/*" style="display:none;">
                 </form>
             </div>
             <div style="flex:4;">

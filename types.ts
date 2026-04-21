@@ -41,7 +41,7 @@ interface UserEntry extends RowDataPacket {
   userId: number;
   username: string;
   passwordHash: string;
-  profilePic: string;
+  profilePic: Buffer | null;
   isPublic: boolean;
   isAdmin: boolean;
   themeLight: boolean;
