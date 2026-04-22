@@ -5,13 +5,20 @@ import {type ScoreEntry, type Score} from "../types.js";
 import { getCityById } from '../models/cityModel.js';
 
 //Function to pull the top 10 scores of a given city
-async function supply10FromCity(req: Request, res: Response){
+async function supply10FromCityAndPersonalBest(req: Request, res: Response){
     //pull id from the url leaderboard/:id
     const cityId = Number(req.params['id'] as string);
     //call the function from the Model, then map function to convert ScoreEntry to Score, then merge promises
     const top10 = await Promise.all((await Model.pullTop10OfCity(cityId)).map(entry => convertScoreEntryToScore(entry)));
+    //assign personal best, undefined if the user is a guest
+    let personalBest: (ScoreEntry | undefined) = undefined;
+    const userId: number | undefined = req.session.userId;
+    //If user is logged in, find their personal best and pass that through as well
+    if(userId){
+        personalBest = await Model.getPersonalBest(userId, cityId);
+    }
     //pass to leaderboardTemple and get cityname from the cityId
-    res.render('leaderboardTemplate', {scores:top10,cityName: (await getCityById(cityId)).cityName});
+    res.render('leaderboardTemplate', {scores:top10,cityName: (await getCityById(cityId)).cityName, personalBest});
 }
 
 //Function to pull the top 10 scores of a user, not a response, just a function
@@ -28,6 +35,6 @@ async function convertScoreEntryToScore(entry: ScoreEntry): Promise<Score>{
 }
 
 export {
-    supply10FromCity,
+    supply10FromCityAndPersonalBest,
     getTop10OfUser
 }

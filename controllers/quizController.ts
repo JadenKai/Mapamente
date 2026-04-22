@@ -11,7 +11,9 @@ async function returnQuiz(req: Request, res:Response){
     // initialize value to store the amount of correct answers
     let corrects: number = 0;
     // Take the first 10 elements (corresponding to the answers)
-    for(let [_,answerId] of Object.entries(answerInfo).slice(0,10)){
+    for(let [questionId,answerId] of Object.entries(answerInfo)){
+        //Verify that the field is a propery answer to be checked
+        if (questionId === 'timeRemaining') continue;
         //Check the answer in the database to see if it is correct
         corrects += Number((await Model.checkCorrectAnswer(Number(answerId))));
     }
@@ -19,29 +21,29 @@ async function returnQuiz(req: Request, res:Response){
     const cityId = (await getCityIdByQuestionId(Number(Object.entries(req.body)[0][0])))
     //get the userId from the current session
     const userId = req.session.userId
-
     // Decreases linearly from max to the minimum amount of time (in ms) then locks in the score multiplier
     function scoreMultiplier(timeRemaining:number, minimum:number): number{
         if(timeRemaining <= minimum) return minimum/30000;
         return timeRemaining/30000
     }
-
     // Use the amount of corrects then multiply by the multiplier
     const score = corrects*1000*scoreMultiplier(answerInfo["timeRemaining"],10000)
-    //console.log(corrects + " " + score + " " + answerInfo["timeRemaining"] + " " + scoreMultiplier(answerInfo["timeRemaining"],10000))
-    
-    //build the ScoreEntry only if the user is logged in, then submit it to the database
-    if(userId){
-        uploadScore({
+    //Build the scoreEntry for the calculated information
+    const scoreEntry: ScoreEntry = {
         scoreId:-1, 
         userId: userId, 
         cityId: cityId,
         correctCount: corrects,
-        score: score
-        } as ScoreEntry)
+        score: score,
+        timeCompleted:30000-answerInfo["timeRemaining"],
+        isPublic: true //change later
+        } as ScoreEntry;
+    //If the user is logged in, upload it as that user
+    if(userId){
+        await uploadScore(scoreEntry)
     }
-    //then send the user to the leaderboard (hopefully one day with a highlighted score)
-    res.redirect("leaderboard/" + cityId)
+    //Send them to the landing page
+    res.render("wip",{scoreEntry}) //Change Later
 }
 
 //Generate a quiz for the system to use when accessing quiz/:id

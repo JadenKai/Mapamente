@@ -16,7 +16,8 @@ CREATE TABLE User (
     profilePic   MEDIUMBLOB,
     isPublic     BOOLEAN      NOT NULL DEFAULT true,
     isAdmin      BOOLEAN      NOT NULL DEFAULT false,
-    themeLight   BOOLEAN      NOT NULL DEFAULT true
+    themeLight   BOOLEAN      NOT NULL DEFAULT true,
+    isActive     BOOLEAN      NOT NULL DEFAULT true,
 );
 
 CREATE TABLE Question (
@@ -40,6 +41,8 @@ CREATE TABLE Score (
     cityId       INT NOT NULL,
     correctCount INT NOT NULL DEFAULT 0,
     score        INT NOT NULL,
+    timeCompleted INT NOT NULL,
+    isPublic     BOOLEAN NOT NULL,
     FOREIGN KEY (userId) REFERENCES User(userId),
     FOREIGN KEY (cityId) REFERENCES City(cityId)
 );

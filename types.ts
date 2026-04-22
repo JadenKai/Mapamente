@@ -45,6 +45,7 @@ interface UserEntry extends RowDataPacket {
   isPublic: boolean;
   isAdmin: boolean;
   themeLight: boolean;
+  isActive: boolean;
 }
 
 //Function that represents a Database entry in the Question database
@@ -69,6 +70,8 @@ interface ScoreEntry extends RowDataPacket {
   cityId: number;
   correctCount: number;
   score: number;
+  timeCompleted: number;
+  isPublic: boolean;
 }
 
 export {
