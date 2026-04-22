@@ -94,6 +94,11 @@ p {
 .globe {
   width: 5vw;
   height: auto;
+  border-radius: 50%;
+}
+
+.globe:hover {
+box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.8);
 }
 
 .profile {
@@ -103,10 +108,40 @@ p {
   object-fit: cover;
 }
 
+.profile:hover {
+box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.8);
+}
+
 .logo {
   width: 5vw;
   height: auto;
   justify-content: left;
+  border-radius: 50%;
+}
+
+.logo:hover {
+box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.8);
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navLabel {
+  color: var(--light-text);
+  font-size: 15px;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  display:flex;
+  justify-content: center;
+}
+
+.navItem:hover .navLabel {
+  opacity: 1;
 }
 /* ---------------------------- */
 
@@ -152,7 +187,7 @@ p {
 }
 /*--------------------------------*/
 
-/*For login and signup pages:*/
+/*For login.ejs and signup.ejs pages:*/
 .formBox{
   display: inline-block;
   border: black;

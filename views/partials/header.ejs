@@ -7,19 +7,22 @@
     </head>
     <body>
         <div class = "headerButtons">
-            <div>
+            <div class="navItem">
                 <a href="/home">
-                    <img class = "logo" src="/images/Logo.png" alt="Logo">
+                    <img class = "logo" src="/images/Logo.png" alt="Logo" style="text-decoration: none; display: block;">
                 </a>
+                <span class="navLabel">Home</span>
             </div>
-            <div>
+            <div class="navItem">
                 <a href="/cities">
-                    <img class = "globe" src="/images/Globe.png" alt="Globe">
+                    <img class = "globe" src="/images/Globe.png" alt="Globe" style="text-decoration: none; display: block;">
                 </a>
+                <span class="navLabel">All Cities</span>
             </div>
-            <div>
+            <div class="navItem">
                 <a href="<%= locals.session && locals.session.userId ? '/profile' : '/login' %>">
-                <img class="profile" src="<%= locals.profilePicSrc || '/images/Profile.png' %>" alt="Profile">
+                    <img class="profile" src="<%= locals.profilePicSrc || '/images/Profile.png' %>" alt="Profile" style="text-decoration: none; display: block;">
                 </a>
+                <span class="navLabel">Login/Profile</span>
             </div>
         </div>
