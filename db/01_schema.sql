@@ -17,7 +17,7 @@ CREATE TABLE User (
     isPublic     BOOLEAN      NOT NULL DEFAULT true,
     isAdmin      BOOLEAN      NOT NULL DEFAULT false,
     themeLight   BOOLEAN      NOT NULL DEFAULT true,
-    isActive     BOOLEAN      NOT NULL DEFAULT true,
+    isActive     BOOLEAN      NOT NULL DEFAULT true
 );
 
 CREATE TABLE Question (
