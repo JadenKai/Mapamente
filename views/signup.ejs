@@ -2,7 +2,7 @@
         <header class = "pageTitle">
             Sign Up
         </header>
-        <div style="display:flex; justify-content: center;">
+        <div class="center">
             <div class="formBox">
                 <% if (locals.error) { %><p style="color: red; text-align: center;"><%= error %></p><% } %>
                 <form class="form" action="/addPlayer" method="post"> <!--This will post Username, Password, and PasswordCheck string variables as {"Username":"input",etc}-->
@@ -18,11 +18,11 @@
                 </form>
             </div>
         </div>
-        <p style="display:flex; justify-content: center;">
+        <p class="center">
             Or if you already have an account:
         </p>
         <a href="/login" class="button">
-            <button  class = "signUpButton">
+            <button  class = "fancyButton">
                 Login
             </button>
         </a>

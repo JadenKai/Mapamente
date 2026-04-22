@@ -34,11 +34,13 @@
   }
 }
 
+/* Sets general text color and font */
 * {
   color: var(--dark-text);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+/* Sets general traits in the html body */
 body {
   background-color: var(--background-color);
   margin: 0px;
@@ -47,15 +49,41 @@ body {
   flex-direction: column;
 }
 
+/* Sets general font size for paragraph text */
 p {
   font-size: 18px;
 }
 
+/* This is just a tag for divs to center items that themselves cannot be centered */
 .center{
   display: flex;
   justify-content: center;
 }
 
+/* This is for most page titles except in city wikis */
+.pageTitle {
+  font-size: 5vh;
+  text-align: center;
+}
+
+/* This is used in login.ejs, signup.ejs, profile.ejs, quizTemplate.ejs, and home.ejs */
+.fancyButton {
+  background-color: var(--button-color);
+  padding: 6px 16px;
+  color: var(--light-text);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+/* This is used to default all buttons */
+.button {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* These are used in header.ejs: */
 .headerButtons {
   display: flex;
   justify-content: space-between;
@@ -68,6 +96,21 @@ p {
   height: auto;
 }
 
+.profile {
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo {
+  width: 5vw;
+  height: auto;
+  justify-content: left;
+}
+/* ---------------------------- */
+
+/* These are for home.ejs: */
 .homeGlobe {
   width: 10vw;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
@@ -77,35 +120,37 @@ p {
   display: flex;
   justify-content: center;
 }
+/*------------------------------*/
 
-.profile {
-  width: 5vw;
-  height: 5vw;
-  border-radius: 50%;
-  object-fit: cover;
+/* These are for wikiTemplate.ejs: */
+.cityTitles {
+  font-size: 5vh;
+  text-align: center;
+  background-size: cover;
+  color: var(--light-text);
+  padding: 10px;
 }
 
-.profilePicture { /* For Profile Page */
-  width: 15vw;
-  height: 15vw;
-  border-radius: 50%;
-  object-fit: cover;
+.quizButton {
+  background-color: var(--button-color);
+  width: 130px;
+  height: 40px;
+  color: var(--light-text);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  font-size: 18px;
 }
 
-.statsTable{
-  border-collapse: collapse;
-  border: 2px solid black;
-  border-radius: var(--dark-text);
-  padding:5x;
-  margin: 20px;
-  width: 800px;
+.wikiText {
+  margin: 0px;
+  margin-left: 10px;
 }
 
-th, td {
-  border: 1px solid black;
-  padding:5x;
-  background-color: var(--question-box-color);
+.wikiHeader {
+  margin-left: 20px;
+  text-decoration: underline;
 }
+/*--------------------------------*/
 
 /*For login and signup pages:*/
 .formBox{
@@ -132,11 +177,80 @@ th, td {
 input[type="submit"] {
     appearance: none;
     -webkit-appearance: none;
-    color: black;
   }
-/*--------------------*/
+/*---------------------------*/
 
-/* For quiz template page: */
+/* These are used in cities.ejs */
+.cityRow {
+  display: flex;
+  gap: 20px;
+  margin:20px;
+  margin-bottom: 10px;
+}
+
+.cityBox {
+  display: inline-block;
+  border: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  margin: 10px;
+  flex: 1;
+  background-color: var(--button-color);
+  box-shadow: 0 0 15px 5px rgba(0,0,0,0.3);
+}
+
+.cityTitle {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--light-text);
+}
+
+.cityBoxButtons {
+ display:inline-block;
+ border:black;
+ border-style: solid;
+ border-width:2px;
+ border-radius: 10px;
+ padding-top:5px;
+ padding-bottom:5px;
+ padding-left:20px;
+ padding-right:20px;
+ background-color: var(--button-color);
+ transition: box-shadow 0.3s ease;
+}
+
+.cityBoxButtons:hover {
+box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.8);
+}
+/*----------------------------*/
+
+/* For profile.ejs page: */
+.profilePicture { 
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.statsTable{
+  border-collapse: collapse;
+  border: 2px solid black;
+  border-radius: var(--dark-text);
+  padding:5x;
+  margin: 20px;
+  width: 800px;
+}
+
+th, td {
+  border: 1px solid black;
+  padding:5x;
+  background-color: var(--question-box-color);
+}
+/*-----------------------*/
+
+/* For quizTemplate.ejs page: */
 .questionsBox{
   display: flex;
   justify-content: center;
@@ -175,176 +289,7 @@ label:hover {
   text-shadow: 3px 3px 5px var(--shadow-color);
 }
 
-/*--------------------*/
-
-.logo {
-  width: 5vw;
-  height: auto;
-  justify-content: left;
-}
-
-.pageTitle {
-  font-size: 5vh;
-  text-align: center;
-}
-
-.cityTitles {
-  font-size: 5vh;
-  text-align: center;
-  background-size: cover;
-  color: var(--light-text);
-  padding: 10px;
-}
-
-.signUpButton {
-  background-color: var(--button-color);
-  padding: 6px 16px;
-  color: var(--light-text);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  font-size: 18px;
-}
-
-.quizButton {
-  background-color: var(--button-color);
-  width: 130px;
-  height: 40px;
-  color: var(--light-text);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  font-size: 18px;
-}
-
-.button {
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-}
-
-/* These are used in cities.ejs */
-.cityRow {
-  display: flex;
-  gap: 20px;
-}
-
-.cityBox {
-  display: inline-block;
-  border: black;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 10px;
-  margin: 10px;
-  flex: 1;
-  background-color: var(--button-color);
-  box-shadow: 0 0 15px 5px rgba(0,0,0,0.3);
-}
-
-.cityBoxButtons {
- display:inline-block;
- border:black;
- border-style: solid;
- border-width:2px;
- border-radius: 10px;
- padding-top:5px;
- padding-bottom:5px;
- padding-left:20px;
- padding-right:20px;
- background-color: var(--button-color);
- transition: box-shadow 0.3s ease;
-}
-
-.cityBoxButtons:hover {
-box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.8);
-}
-
-/* ---------------------------- */
-
-.madridBox {
-  display: inline-block;
-  border: black;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 10px;
-  margin: 10px;
-  flex: 1;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(../images/Madrid.jpg);
-}
-
-.cityTitle {
-  text-align: center;
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--light-text);
-}
-
-/* Old prototype wikis: */
-.wikiText {
-  margin: 0px;
-  margin-left: 10px;
-}
-
-.wikiHeader {
-  margin-left: 20px;
-  text-decoration: underline;
-}
-/*-----------------------------*/
-
-/* These are residual from the prototype, no longer used: */
-.questionBox {
-  display: flex;
-  display: inline-block;
-  justify-content: center;
-  border: black;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 10px;
-  margin: 10px;
-  width: 400px;
-  height: 175px;
-  background-color: var(--question-box-color);
-}
-
-/*.question {
-  color: var(--dark-text);
-  text-align: center;
-
-}*/
-
-.answerChoices {
-  text-align: left;
-  display: inline-block;
-  text-align: left;
-  list-style-type: circle;
-}
-
-.answer {
-  color: var(--dark-text);
-  font-size: 18px;
-}
-/*----------------------------------*/
-
-/* Below are for the footer partial */
-footer {
-  background: var(--footer-color);
-  text-align: center;
-  width: 100%;
-  margin-top: auto;
-  margin-bottom: -20px;
-}
-
-.footerUL {
-  display: inline-block;
-  text-align: left;
-  list-style-type: circle;
-  font-size: 14px;
-}
-
-.footerBullets {
-  color: var(--light-text);
-  font-size: 14px;
-}
-
-/* Timer bar!*/
+/* Still in quizTemplate.ejs, these are for the timer:*/
 .timer-container {
   position: fixed;
   bottom: 0;
@@ -368,3 +313,65 @@ footer {
   border-radius: 99px;
   transition: width 0.2s linear, background 0.4s ease;
 }
+/*--------------------------*/
+
+/* Below are for footer.ejs:*/
+footer {
+  background: var(--footer-color);
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: -20px;
+}
+
+.footerUL {
+  display: inline-block;
+  text-align: left;
+  list-style-type: circle;
+  font-size: 14px;
+}
+
+.footerBullets {
+  color: var(--light-text);
+  font-size: 14px;
+}
+/*--------------------------*/
+
+/* These are residual from prototypes, no longer used: */
+.madridBox {
+  display: inline-block;
+  border: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  margin: 10px;
+  flex: 1;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(../images/Madrid.jpg);
+}
+
+.questionBox {
+  display: flex;
+  display: inline-block;
+  justify-content: center;
+  border: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  margin: 10px;
+  width: 400px;
+  height: 175px;
+  background-color: var(--question-box-color);
+}
+
+.answerChoices {
+  text-align: left;
+  display: inline-block;
+  text-align: left;
+  list-style-type: circle;
+}
+
+.answer {
+  color: var(--dark-text);
+  font-size: 18px;
+}
+/*----------------------------------*/
