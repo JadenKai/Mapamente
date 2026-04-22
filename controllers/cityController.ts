@@ -11,6 +11,14 @@ async function supplyCity(req: Request, res: Response){
     res.render('wikiTemplate', {city:cityEntry});
 }
 
+//Function for loading the cities selection page
+async function supplyCities(req: Request, res: Response){
+    //render the cities page
+    const cities = await Model.getAllCities();
+    res.render('cities', {cities});
+}
+
 export {
-    supplyCity
+    supplyCity,
+    supplyCities
 }
