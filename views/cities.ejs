@@ -1,173 +1,58 @@
+<!--This is for the page to select from all avaliable cities. (/cities)-->
+<!--Assuming I'm handed in a list of CityEntry-->
+
 <%- include('partials/header') %>
 
+        <!--Page Title-->
         <header class = "pageTitle">
             Cities
         </header>
 
-        <div class="cityRow">
-            <div class = "madridBox">
-                <p class = "cityTitle">
-                    Madrid
+        <!--Basically a for(let c in cities) but tracking index-->
+        <% for(let i = 0; i < cities.length; i++) { let c = cities[i]; %>
+            <!--Every other index starts a new row-->
+            <% if (i % 2 === 0) { %>
+                <div class="cityRow">
+            <% } %>
+            <!--div cityBox is the "for each" part. There's a box for each city-->
+            <div class="cityBox">
+                <p class="cityTitle">
+                   <%= c.cityName %>
                 </p>
-                <a href="/madrid/wiki" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Wiki
-                    </p>
-                </a>
-                <a href="/madrid/quiz" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Quiz
-                    </p>
-                </a>
+                <div style="display:flex; justify-content: center;">
+                    <div style="flex:1; text-align:center;">
+                        <a href="/wiki/<%=c.cityId%>" style="text-decoration: none;">
+                            <p class="cityBoxButtons">
+                                Wiki →
+                            </p>
+                        </a>
+                    </div>
+                    <div  style="flex:1; text-align:center;">
+                        <a href="/quiz/<%=c.cityId%>" style="text-decoration: none;">
+                            <p class="cityBoxButtons">
+                                Quiz →
+                            </p>
+                        </a>
+                    </div>
+                    <div  style="flex:1; text-align:center;">
+                        <a href="/leaderboard/<%=c.cityId%>" style="text-decoration: none;">
+                            <p class="cityBoxButtons">
+                                Leaderboard →
+                            </p>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class = "cityBox" style="background-image: radial-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(../images/austin_banner.png);">
-                <p class ="cityTitle">
-                    Austin
-                </p>
-                <a href="/wiki/11" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Wiki
-                    </p>
-                </a>
-                <a href="/quiz/11" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Quiz
-                    </p>
-                </a>
-            </div>
-            
-        </div>
-        <div class="cityRow">
-            <div class = "cityBox">
-                <p class = "cityTitle">
-                    City C
-                </p>
-                <a href="/madrid/wiki" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Wiki
-                    </p>
-                </a>
-                <a href="/madrid/quiz" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Quiz
-                    </p>
-                </a>
-            </div>
-            <div class = "cityBox">
-                <p class ="cityTitle">
-                    City D
-                </p>
-                <a href="/madrid/wiki" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Wiki
-                    </p>
-                </a>
-                <a href="/madrid/quiz" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Quiz
-                    </p>
-                </a>
-            </div>
-            
-        </div>
-        <div class="cityRow">
-            <div class = "cityBox">
-                <p class = "cityTitle">
-                    City E
-                </p>
-                <a href="/madrid/wiki" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Wiki
-                    </p>
-                </a>
-                <a href="/madrid/quiz" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Quiz
-                    </p>
-                </a>
-            </div>
-            <div class = "cityBox">
-                <p class ="cityTitle">
-                    City F
-                </p>
-                <a href="/madrid/wiki" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Wiki
-                    </p>
-                </a>
-                <a href="/madrid/quiz" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Quiz
-                    </p>
-                </a>
-            </div>
-            
-        </div>
-        <div class="cityRow">
-            <div class = "cityBox">
-                <p class = "cityTitle">
-                    City G
-                </p>
-                <a href="/madrid/wiki" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Wiki
-                    </p>
-                </a>
-                <a href="/madrid/quiz" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Quiz
-                    </p>
-                </a>
-            </div>
-            <div class = "cityBox">
-                <p class ="cityTitle">
-                    City H
-                </p>
-                <a href="/madrid/wiki" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Wiki
-                    </p>
-                </a>
-                <a href="/madrid/quiz" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Quiz
-                    </p>
-                </a>
-            </div>
-            
-        </div>
-        <div class="cityRow" style="margin-bottom: 20px;">
-            <div class = "cityBox">
-                <p class = "cityTitle">
-                    City I
-                </p>
-                <a href="/madrid/wiki" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Wiki
-                    </p>
-                </a>
-                <a href="/madrid/quiz" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Quiz
-                    </p>
-                </a>
-            </div>
-            <div class = "cityBox">
-                <p class ="cityTitle">
-                    City J
-                </p>
-                <a href="/madrid/wiki" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Wiki
-                    </p>
-                </a>
-                <a href="/madrid/quiz" style="text-decoration: none;">
-                    <p class="cityLinks">
-                        Quiz
-                    </p>
-                </a>
-            </div>
-            
-        </div>
+
+            <!--Checks if this index is the end of a row or if there's no more cities-->
+            <% if (i % 2 === 1 || i === cities.length - 1) { %>
+                <!--The following checks if you end with an odd number of cities-->
+                <% if (i === cities.length - 1 && cities.length % 2 === 1) { %>
+                    <!--Adds an extra invisible box if there's an odd number of cities-->
+                    <div class="cityBox" style="visibility: hidden;"></div>
+                <% } %>
+            </div> <!--This is in here so the row closes after two boxes-->
+            <% } %>
+        <%}%>
 
 <%- include('partials/footer') %>

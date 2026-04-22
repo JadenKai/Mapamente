@@ -11,22 +11,22 @@ SET FOREIGN_KEY_CHECKS = 1;
 INSERT INTO City (cityName, historyText, factsText, cityBanner) VALUES
 ('Mexico City',
  'Mexico City was founded by the Aztecs as Tenochtitlán in 1325 on an island in Lake Texcoco. Spanish conquistador Hernán Cortés conquered the city in 1521 and built the colonial capital directly over the Aztec ruins. It became the seat of the Viceroyalty of New Spain and, after independence in 1821, was established as the national capital by the republican constitution of 1824. The city hosted the Summer Olympic Games in 1968 and has grown into one of the largest metropolitan areas in the world.',
- 'Mexico City is home to over 20 million people, making it the second-largest metropolitan area in the Americas. It contributes 25.3% of Mexico\'s national GDP through its service sector. The Alameda Central is recognized as the oldest public park in the Americas. The city is built on soft soil over a drained lakebed, which amplifies the effects of earthquakes caused by the Cocos tectonic plate.',
+ 'Mexico City is home to over 20 million people, making it the second-largest metropolitan area in the Americas. It contributes 25.3% of Mexico''s national GDP through its service sector. The Alameda Central is recognized as the oldest public park in the Americas. The city is built on soft soil over a drained lakebed, which amplifies the effects of earthquakes caused by the Cocos tectonic plate.',
  'MexicoCityBanner.jpg'),
 
 ('Buenos Aires',
  'Buenos Aires was first settled by Spanish colonizer Pedro de Mendoza in 1536 and named Nuestra Señora Santa María del Buen Aire. After the original settlement failed, Juan de Garay permanently refounded the city in 1580. It became the seat of the Viceroyalty of the Río de la Plata in 1776 and was officially made the federal capital of Argentina in 1880 after years of political conflict between the city and the interior provinces.',
- 'Buenos Aires is the largest port in South America and home to the University of Buenos Aires, Argentina\'s major national university. Its residents are known as porteños, meaning people of the port. The tango dance was born in Buenos Aires in the late 1800s. Greater Buenos Aires is home to about one-third of all Argentine people.',
+ 'Buenos Aires is the largest port in South America and home to the University of Buenos Aires, Argentina''s major national university. Its residents are known as porteños, meaning people of the port. The tango dance was born in Buenos Aires in the late 1800s. Greater Buenos Aires is home to about one-third of all Argentine people.',
  'BuenosAiresBanner.jpg'),
 
 ('Barcelona',
  'Barcelona was traditionally founded by the Phoenicians or Carthaginians, who had trading posts along the Catalonian coast. During Roman times it was known as Barcino. The city became an important religious centre before the Moorish arrival in 717 CE. Philip V of Spain besieged and captured Barcelona in 1714 after Catalans supported a rival claimant, dismantling local self-government. The city served as the loyalist capital during the Spanish Civil War in 1937–39 and hosted the Summer Olympic Games in 1992.',
- 'Barcelona is the capital of the Catalonia autonomous community and Spain\'s major Mediterranean port. The Barcelona area provides about one-fifth of Spain\'s industrial output. The Sagrada Família basilica, designed by Antoni Gaudí, has been under construction since 1882. FC Barcelona\'s youth academy La Masia has produced world-class players including Lionel Messi, Xavi, and Andrés Iniesta.',
+ 'Barcelona is the capital of the Catalonia autonomous community and Spain''s major Mediterranean port. The Barcelona area provides about one-fifth of Spain''s industrial output. The Sagrada Família basilica, designed by Antoni Gaudí, has been under construction since 1882. FC Barcelona''s youth academy La Masia has produced world-class players including Lionel Messi, Xavi, and Andrés Iniesta.',
  'BarcelonaBanner.jpg'),
 
 ('Bogotá',
  'European settlement in Bogotá began in 1538 when Gonzalo Jiménez de Quesada conquered Bacatá, the main seat of the indigenous Chibcha people. The Spanish named the city Bogotá and made it the capital of New Granada. After Simón Bolívar led Colombia to independence in 1819, Bogotá became the capital of the Republic of Colombia. The city is laid out in a grid pattern with Plaza de Bolívar at its historic center.',
- 'Bogotá sits 2,640 meters above sea level in the Cordillera Oriental of the Northern Andes, making it one of the highest capital cities in the world. It is home to the Gold Museum, which possesses the world\'s finest and largest collection of worked gold. Avianca, the first commercial airline in South America, is headquartered in Bogotá. The city is widely nicknamed the Athens of South America for its universities and cultural institutions.',
+ 'Bogotá sits 2,640 meters above sea level in the Cordillera Oriental of the Northern Andes, making it one of the highest capital cities in the world. It is home to the Gold Museum, which possesses the world''s finest and largest collection of worked gold. Avianca, the first commercial airline in South America, is headquartered in Bogotá. The city is widely nicknamed the Athens of South America for its universities and cultural institutions.',
  'BogotáBanner.jpg'),
 
 ('Lima',

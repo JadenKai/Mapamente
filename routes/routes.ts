@@ -17,10 +17,6 @@ router.get('/home', (_req: Request, res: Response) => {
   res.render('home');
 });
 
-router.get('/cities', (_req: Request, res: Response) => {
-  res.render('cities');
-});
-
 router.get('/login', (_req: Request, res: Response) => {
   res.render('login');
 });

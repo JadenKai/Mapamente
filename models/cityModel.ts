@@ -17,7 +17,15 @@ async function getCityIdByQuestionId(questionId: number): Promise<number>{
     return(result[0].cityId);
 }
 
+//Function to get all cities in the database
+async function getAllCities():Promise<CityEntry[]>{
+    //Pull all cities from the database
+    const result = (await pool.query<CityEntry[]>("SELECT * FROM City"));
+    return(result[0]);
+}
+
 export {
     getCityById,
-    getCityIdByQuestionId
+    getCityIdByQuestionId,
+    getAllCities
 }
