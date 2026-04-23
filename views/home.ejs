@@ -9,23 +9,31 @@
             Welcome to Mapamente, a website where you can learn all about
             Spanish-speaking cities around the world!
             <br>
-            Then, you can test yourself with built-in quizzes and compare
-            your stats to others.
+            Click the globe to read our curated wikis, take randomized quizzes,
+            and see the community's best scores!
             <br> <br>
         </p>
+
         <p style = "text-align: center;">
-            Create an account to track your stats:
+            Create an account to track and save your stats:
         </p>
+        <!--Button that links to (/signup)-->
         <a href="/signup" class="button">
             <button  class = "fancyButton" >
                 Sign Up
             </button>
         </a>
+
         <p style = "text-align: center;">
             or, browse as a guest anonymously:
         </p>
-        <a class = "globeContainer" href="/cities" style="margin-bottom: 20px;">
-            <img class = "homeGlobe" src="/images/Globe.png" alt="Globe">
-        </a>
+        <!--Globe that links to (/cities)-->
+        <div class="navItem">
+            <a class = "globeContainer" href="/cities" style="margin-bottom: 20px;">
+                <img class = "homeGlobe" src="/images/Globe.png" alt="Globe">
+            </a>
+            <!--This is invisible unless hovering over the globe:-->
+            <span class="navLabel">Go To All Cities →</span> 
+        </div>
 
 <%- include('partials/footer') %>
