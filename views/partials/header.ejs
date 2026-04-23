@@ -1,25 +1,36 @@
+<!--This is the partial for the header that goes on all pages-->
+
 <!DOCTYPE html>
 <html>
+    <!--This head is so the tab has the logo and Mapamente name.-->
     <head>
         <link rel="stylesheet" href="/stylesheets/style.css">
         <title>Mapamente</title>
         <link rel="icon" type="image/png" href="/images/Logo.png">
     </head>
+
     <body>
         <div class = "headerButtons">
-            <div>
+            <!--Home logo with hover text and links to (/home)-->
+            <div class="navItem">
                 <a href="/home">
-                    <img class = "logo" src="/images/Logo.png" alt="Logo">
+                    <img class = "logo" src="/images/Logo.png" alt="Logo" style="text-decoration: none; display: block;">
                 </a>
+                <span class="navLabel">Home</span>
             </div>
-            <div>
+            <!--Globe symbol with hover text and links to (/cities)-->
+            <div class="navItem">
                 <a href="/cities">
-                    <img class = "globe" src="/images/Globe.png" alt="Globe">
+                    <img class = "globe" src="/images/Globe.png" alt="Globe" style="text-decoration: none; display: block;">
                 </a>
+                <span class="navLabel">All Cities</span>
             </div>
-            <div>
+            <!--Has empty profile picture by default, or the custom picture otherwise, with hover text-->
+            <!--Links to (/profile) if logged in and (/login) otherwise.-->
+            <div class="navItem">
                 <a href="<%= locals.session && locals.session.userId ? '/profile' : '/login' %>">
-                <img class="profile" src="<%= locals.profilePicSrc || '/images/Profile.png' %>" alt="Profile">
+                    <img class="profile" src="<%= locals.profilePicSrc || '/images/Profile.png' %>" alt="Profile" style="text-decoration: none; display: block;">
                 </a>
+                <span class="navLabel">Login/Profile</span>
             </div>
         </div>

@@ -1,18 +1,27 @@
 :root { /* Variables that control colors for light mode: */
-  --dark-text: rgb(58, 44, 3);
-  --light-text: bisque;
-  --background-color: bisque;
+  --dark-text: #2E2015;
+  --light-text: #FAF6F0;
+  --label-text: rgb(58, 44, 3);
+  --background-color: #f1eae0;
   --gradient-color: rgba(121, 103, 74, 0.7);
   --tile-color: wheat;
-  --button-color: rgb(119, 93, 55);
+  --button-color: #7A5C3A;
   --question-box-color: rgb(179, 153, 116);
   --answer-hover-color: rgb(159,133,96);
   --shadow-color: rgba(0,0,0,0);
   --footer-color: rgb(121, 103, 74);
+  --button-shadow-color: rgba(122,92,58,0.35);
+  --button-hover-color: #5C4228;
   /*Possibly change these?*/
   --timer-safe: #1D9E75;
   --timer-worry: #EF9F27;
   --timer-urgent: #E24B4A;
+  /*
+  --background-color: bisque;
+  --button-color: rgb(119, 93, 55);
+  --dark-text: rgb(58, 44, 3);
+  --light-text: bisque;
+  */
 }
 /* Automatically uses dark variables if system settings are on dark mode: */
 @media (prefers-color-scheme: dark) { 
@@ -27,6 +36,8 @@
     --answer-hover-color: rgb(103, 111, 120);
     --shadow-color: rgba(0,0,0,0.5);
     --footer-color: rgb(83, 91, 100);
+    --button-shadow-color: rgba(255, 255, 255, 0.8);
+    --button-hover-color: rgba(255, 255, 255, 0.8);
     /*Possibly change these?*/
     --timer-safe: #1D9E75;
     --timer-worry: #EF9F27;
@@ -76,6 +87,11 @@ p {
   font-size: 18px;
 }
 
+.fancyButton:hover{
+  box-shadow: 0 0 12px 4px var(--button-shadow-color);
+  background-color: var(--button-hover-color);
+}
+
 /* This is used to default all buttons */
 .button {
   display: flex;
@@ -94,6 +110,11 @@ p {
 .globe {
   width: 5vw;
   height: auto;
+  border-radius: 50%;
+}
+
+.globe:hover {
+box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.8);
 }
 
 .profile {
@@ -103,10 +124,40 @@ p {
   object-fit: cover;
 }
 
+.profile:hover {
+box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.8);
+}
+
 .logo {
   width: 5vw;
   height: auto;
   justify-content: left;
+  border-radius: 50%;
+}
+
+.logo:hover {
+box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.8);
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navLabel {
+  color: var(--dark-text);
+  font-size: 15px;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  display:flex;
+  justify-content: center;
+}
+
+.navItem:hover .navLabel {
+  opacity: 1;
 }
 /* ---------------------------- */
 
@@ -114,6 +165,11 @@ p {
 .homeGlobe {
   width: 10vw;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+  border-radius: 50%;
+}
+
+.homeGlobe:hover {
+  box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.8);
 }
 
 .globeContainer {
@@ -152,7 +208,7 @@ p {
 }
 /*--------------------------------*/
 
-/*For login and signup pages:*/
+/*For login.ejs and signup.ejs pages:*/
 .formBox{
   display: inline-block;
   border: black;
