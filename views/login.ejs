@@ -6,11 +6,11 @@
             <div class="formBox">
                 <% if (locals.error) { %><p style="color: red; text-align: center;"><%= error %></p><% } %>
                 <form class="form" action="/loginPlayer" method="post"> <!--This will post Username and Password string variables as {"username":"input",etc}-->
-                    <label for="username">Username:&nbsp;&nbsp;</label>
+                    <label class="formText" for="username">Username:&nbsp;&nbsp;</label>
                     <input class="formInput" type="text" id="username" name="username" placeholder="player123"><br>
-                    <label for="password">Password:&nbsp;&nbsp;&nbsp;</label>
+                    <label class="formText" for="password">Password:&nbsp;&nbsp;&nbsp;</label>
                     <input class="formInput" type="password" id="password" name="password" placeholder="*******"><br>
-                    <div class="center">
+                    <div class="center" style="margin-top:10px;">
                         <input class="formInput" type="submit" value="Submit">
                     </div>
                 </form>
