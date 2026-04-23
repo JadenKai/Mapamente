@@ -1,16 +1,16 @@
 :root { /* Variables that control colors for light mode: */
   --dark-text: #2E2015;
-  --light-text: #FAF6F0;
+  --light-text: #f1eae0;
   --label-text: rgb(58, 44, 3);
   --background-color: #f1eae0;
-  --gradient-color: rgba(121, 103, 74, 0.7);
+  --gradient-color: rgba(92, 66, 40,0.8);
   --tile-color: wheat;
   --button-color: #7A5C3A;
-  --question-box-color: rgb(179, 153, 116);
+  --question-box-color: #7A5C3A;
   --answer-hover-color: rgb(159,133,96);
   --shadow-color: rgba(0,0,0,0);
-  --footer-color: rgb(121, 103, 74);
-  --button-shadow-color: rgba(122,92,58,0.35);
+  --footer-color: #7A5C3A;
+  --button-shadow-color: rgba(122,92,58,0.5);
   --button-hover-color: #5C4228;
   /*Possibly change these?*/
   --timer-safe: #1D9E75;
@@ -230,6 +230,10 @@ box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.8);
   color: black;
 }
 
+.formText{
+  color: var(--light-text);
+}
+
 input[type="submit"] {
     appearance: none;
     -webkit-appearance: none;
@@ -266,6 +270,7 @@ input[type="submit"] {
 .cityBoxButtons {
  display:inline-block;
  border:black;
+ color: var(--light-text);
  border-style: solid;
  border-width:2px;
  border-radius: 10px;
@@ -301,6 +306,7 @@ box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.8);
 
 th, td {
   border: 1px solid black;
+  color:var(--light-text);
   padding:5x;
   background-color: var(--question-box-color);
 }
