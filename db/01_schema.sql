@@ -43,7 +43,7 @@ CREATE TABLE Score (
     correctCount INT NOT NULL DEFAULT 0,
     score        INT NOT NULL,
     timeCompleted INT NOT NULL,
-    isPublic     BOOLEAN NOT NULL,
+    isPublic     BOOLEAN NOT NULL DEFAULT TRUE,
     FOREIGN KEY (userId) REFERENCES User(userId),
     FOREIGN KEY (cityId) REFERENCES City(cityId)
 );
