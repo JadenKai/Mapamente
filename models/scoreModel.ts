@@ -58,9 +58,18 @@ async function getPersonalBest(userId:number,cityId:number): Promise<ScoreEntry>
     return rows[0];
 }
 
+//Function to get the top 10 scores of all time for the homepage
+async function pullTop10Total(): Promise<ScoreEntry[]>{
+    const [rows] = (await pool.query<ScoreEntry[]>(
+        "SELECT * FROM Score WHERE isPublic = TRUE ORDER By score DESC LIMIT 10"
+    ));
+    return rows;
+}
+
 export {
     uploadScore,
     pullTop10OfUser,
     pullTop10OfCity,
-    getPersonalBest
+    getPersonalBest,
+    pullTop10Total
 }

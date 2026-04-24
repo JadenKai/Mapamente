@@ -34,7 +34,15 @@ async function convertScoreEntryToScore(entry: ScoreEntry): Promise<Score>{
         score: entry.score, cityName: (await getCityById(entry.cityId)).cityName}
 }
 
+//Function to provide the information for the homepage
+async function homePage(req:Request,res:Response){
+    res.render("home",{
+        scores: await Promise.all((await Model.pullTop10Total()).map(entry => convertScoreEntryToScore(entry)))
+    })
+}
+
 export {
     supply10FromCityAndPersonalBest,
-    getTop10OfUser
+    getTop10OfUser,
+    homePage
 }
