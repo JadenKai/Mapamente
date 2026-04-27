@@ -28,6 +28,21 @@ npm run build
 npm start
 ```
 
+## Testing
+
+Tests are written with Jest and ts-jest. No database or running server is needed — all external dependencies are mocked.
+
+```
+npm test
+```
+
+Test files live in `__tests__/` and mirror the source layout:
+
+- `controllers/quizController.test.ts` — quiz generation and score submission logic
+- `controllers/scoreController.test.ts` — leaderboard, personal best, and homepage scores
+- `controllers/userController.test.ts` — signup, login, and profile auth flows
+- `models/scoreModel.test.ts` — score upload branching logic and query functions
+
 ## Credits
 
 - Dana Gingrey
