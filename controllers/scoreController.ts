@@ -24,14 +24,16 @@ async function supply10FromCityAndPersonalBest(req: Request, res: Response){
 //Function to pull the top 10 scores of a user, not a response, just a function
 async function getTop10OfUser(userId:number): Promise<Score[]> {
     //Similar to above, pull from model, convert to Score form, then combine the promise statements
-    return Promise.all((await Model.pullTop10OfUser(userId)).map(entry => convertScoreEntryToScore(entry)));
+    const temp = Promise.all((await Model.pullTop10OfUser(userId)).map(entry => convertScoreEntryToScore(entry)));
+    return temp
 }
 
 //Simple function to convert the ScoreEntry to the Score form to pass around
 async function convertScoreEntryToScore(entry: ScoreEntry): Promise<Score>{
     //simple function, pull the username and cityname, and push all the information.
-    return {username: (await findUserById(entry.userId))!.username, correctCount: entry.correctCount, 
-        score: entry.score, cityName: (await getCityById(entry.cityId)).cityName}
+    const temp = {username: (await findUserById(entry.userId))!.username, correctCount: entry.correctCount, 
+        score: entry.score, cityName: (await getCityById(entry.cityId)).cityName};
+    return temp
 }
 
 export {
