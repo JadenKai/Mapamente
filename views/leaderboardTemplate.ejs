@@ -1,4 +1,7 @@
-<%- include('partials/header') %> <!-- Assuming I'm handed a cityName and a list of scores -->
+<!--This is for any given leaderboard corresponding to a cityId (/leaderboard/:cityId)-->
+<!--Assuming I'm handed a cityName and a list of scores-->
+
+<%- include('partials/header') %> 
         <header class = "pageTitle">
             <%=cityName%> Leaderboard
         </header>
@@ -16,6 +19,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!--This is the same as a for..of loop just also tracking index:-->
                     <% for(let i = 0; i < scores.length; i++) { let s = scores[i]; %>
                     <tr>
                         <td style="padding: 5px; text-align: center;"><%=i+1%></td>

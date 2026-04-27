@@ -1,3 +1,6 @@
+<!--This is for the page you land on when you finish a quiz. (/quizSubmission)-->
+<!--Assuming passed in a scoreEntry-->
+
 <%- include('partials/header') %>
 
   <div class="center">
@@ -6,6 +9,7 @@
         Stats:
         <br>
       </p>
+      <!--Stats from the quiz just submitted:-->
       <p style="text-align: center;">
         Questions Correct:
         <br>
@@ -13,12 +17,13 @@
         <br><br>
         Speed Completed:
         <br>
-        <%=scoreEntry.timeCompleted%> ns
+        <%=scoreEntry.timeCompleted%> ms
         <br><br>
         Overall Score:
         <br>
         <%=Math.trunc(scoreEntry.score)%> pts
       </p>
+      <!--Three buttons linking to the corresponding wiki, quiz, and leaderboard:-->
       <a href="/wiki/<%=scoreEntry.cityId%>" style="text-decoration: none;">
         <button class="fancyButton" style="margin-right: 10px;">
           Review wiki?
