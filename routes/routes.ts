@@ -5,11 +5,9 @@ import { profileGet, profilePhotoPost, upload } from '../controllers/userControl
 
 const router = Router();
 
-router.get('/wip', (_req: Request, res: Response) => {
-  res.render('wip');
+router.get('/quizScore', (_req: Request, res: Response) => {
+  res.render('landing');
 });
-
-
 
 router.get('/login', (_req: Request, res: Response) => {
   res.render('login');

@@ -43,7 +43,7 @@ async function returnQuiz(req: Request, res:Response){
         await uploadScore(scoreEntry)
     }
     //Send them to the landing page
-    res.render("wip",{scoreEntry}) //Change Later
+    res.render("landing",{scoreEntry})
 }
 
 //Generate a quiz for the system to use when accessing quiz/:id
