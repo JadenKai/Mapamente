@@ -1,4 +1,7 @@
-<%- include('partials/header') %> <!-- Assumming I'm passed a CityEntry object as city -->
+<!--This is for (/wiki/cityId)-->
+<!-- Assumming I'm passed a CityEntry object as city -->
+<%- include('partials/header') %> 
+<!--The following header style contains dynamic photo for the banner-->
     <header class = "cityTitles" style="background-image: radial-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%), url(../images/<%=city.cityBanner%>);">
         <%=city.cityName%>
     </header>
