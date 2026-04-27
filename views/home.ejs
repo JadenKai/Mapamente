@@ -1,40 +1,67 @@
 <!--This is for the home page (/home)-->
 
 <%- include('partials/header') %>
+        <div style="display:flex;">
+            <div style="flex:2;">
+                <header class = "pageTitle">
+                    Mapamente
+                </header>
+                <p style="margin:10px; text-align: center;">
+                    Welcome to Mapamente, a website where you can learn all about
+                    Spanish-speaking cities around the world!
+                    <br>
+                    Click the globe to read our curated wikis, take randomized quizzes,
+                    and see the community's best scores!
+                    <br> <br>
+                </p>
 
-        <header class = "pageTitle">
-            Mapamente
-        </header>
-        <p style="margin:10px; text-align: center;">
-            Welcome to Mapamente, a website where you can learn all about
-            Spanish-speaking cities around the world!
-            <br>
-            Click the globe to read our curated wikis, take randomized quizzes,
-            and see the community's best scores!
-            <br> <br>
-        </p>
+                <p style = "text-align: center;">
+                    Create an account to track and save your stats:
+                </p>
+                <!--Button that links to (/signup)-->
+                <a href="/signup" class="button">
+                    <button  class = "fancyButton" >
+                        Sign Up
+                    </button>
+                </a>
 
-        <p style = "text-align: center;">
-            Create an account to track and save your stats:
-        </p>
-        <!--Button that links to (/signup)-->
-        <a href="/signup" class="button">
-            <button  class = "fancyButton" >
-                Sign Up
-            </button>
-        </a>
-
-        <p style = "text-align: center;">
-            or, browse as a guest anonymously:
-        </p>
-        <!--Globe that links to (/cities)-->
-        <div class="navItem">
-            <a class = "globeContainer" href="/cities" style="margin-bottom: 20px;">
-                <img class = "homeGlobe" src="/images/Globe.png" alt="Globe">
-            </a>
-            <!--This is invisible unless hovering over the globe:-->
-            <span class="navLabel">Go To All Cities →</span> 
+                <p style = "text-align: center;">
+                    or, browse as a guest anonymously:
+                </p>
+                <!--Globe that links to (/cities)-->
+                <div class="navItem">
+                    <a class = "globeContainer" href="/cities" style="margin-bottom: 20px;">
+                        <img class = "homeGlobe" src="/images/Globe.png" alt="Globe">
+                    </a>
+                    <!--This is invisible unless hovering over the globe:-->
+                    <span class="navLabel">Go To All Cities →</span> 
+                </div>
+            </div>
+            <div style="flex:1;">
+                <table class="statsTable" style="width:90%;">
+                <thead>
+                    <tr>
+                        <th colspan="4" style="padding:5px;">Top 10 Scores Over All Cities</th>
+                    </tr>
+                    <tr>
+                        <th style="padding: 5px;">Rank</th>
+                        <th style="padding: 5px;">User</th>
+                        <th style="padding: 5px;">Questions Correct</th>
+                        <th style="padding: 5px;">Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i = 0; i < scores.length; i++) { let s = scores[i]; %>
+                    <tr>
+                        <td style="padding: 5px; text-align: center;"><%=i+1%></td>
+                        <td style="padding: 5px; text-align: center;"><%=s.username%></td>
+                        <td style="padding: 5px; text-align: center;"><%=s.correctCount%></td>
+                        <td style="padding: 5px; text-align: center;"><%=s.score%></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            </div>
         </div>
-        <p><%= JSON.stringify(scores) %></p>
 
 <%- include('partials/footer') %>

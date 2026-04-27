@@ -19,17 +19,23 @@
         <br>
         <%=Math.trunc(scoreEntry.score)%> pts
       </p>
-      <button class="fancyButton" style="margin-right: 10px;">
-        Review wiki?
-      </button>
-      <button class="fancyButton">
-        Try again?
-      </button>
+      <a href="/wiki/<%=scoreEntry.cityId%>" style="text-decoration: none;">
+        <button class="fancyButton" style="margin-right: 10px;">
+          Review wiki?
+        </button>
+      </a>
+      <a href="/quiz/<%=scoreEntry.cityId%>" style="text-decoration: none;">
+        <button class="fancyButton">
+          Try again?
+        </button>
+      </a>
       <br>
       <div class="center">
-        <button class="fancyButton" style="margin:10px;">
-          View leaderboard →
-        </button>
+        <a href="/leaderboard/<%=scoreEntry.cityId%>" style="text-decoration: none;">
+          <button class="fancyButton" style="margin:10px;">
+            View leaderboard →
+          </button>
+        </a>
       </div>
     </div>
   </div>
