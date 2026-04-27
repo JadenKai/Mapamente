@@ -75,7 +75,7 @@ async function profileGet(req: Request, res: Response): Promise<void> {
     return;
   }
   
-  res.render("profile", { user, scores: getTop10OfUser(user.userId)});
+  res.render("profile", { user, scores: await getTop10OfUser(user.userId)});
 }
 
 // Handles profile picture upload: resizes to 200x200 WebP and stores raw bytes in the DB

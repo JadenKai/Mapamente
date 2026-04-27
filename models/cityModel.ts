@@ -5,7 +5,7 @@ import { type CityEntry , type QuestionEntry} from "../types.js";
 //Function to take in the cityId and return the CityEntry from database
 async function getCityById(cityId: number): Promise<CityEntry> {
     //Pull the results from the database
-    const result = (await pool.query<CityEntry[]>("SELECT * FROM City WHERE cityId = ?", cityId))[0];
+    const result = (await pool.query<CityEntry[]>("SELECT * FROM City WHERE cityId = ?", [cityId]))[0];
     //Give back only the first entry result (should only have 1)
     return(result[0])
 }
