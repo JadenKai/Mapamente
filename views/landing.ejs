@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+  <div class="center">
+    <div class="formBox" style="padding:30px;">
+      <p style="text-align: center; font-size: 25px; font-weight: bold; margin-top:0px;">
+        Stats:
+        <br>
+      </p>
+      <p style="text-align: center;">
+        Questions Correct:
+        <br>
+        <%=scoreEntry.correctCount%> / 10
+        <br><br>
+        Speed Completed:
+        <br>
+        <%=scoreEntry.timeCompleted%> ns
+        <br><br>
+        Overall Score:
+        <br>
+        <%=Math.trunc(scoreEntry.score)%> pts
+      </p>
+      <a href="/wiki/<%=scoreEntry.cityId%>" style="text-decoration: none;">
+        <button class="fancyButton" style="margin-right: 10px;">
+          Review wiki?
+        </button>
+      </a>
+      <a href="/quiz/<%=scoreEntry.cityId%>" style="text-decoration: none;">
+        <button class="fancyButton">
+          Try again?
+        </button>
+      </a>
+      <br>
+      <div class="center">
+        <a href="/leaderboard/<%=scoreEntry.cityId%>" style="text-decoration: none;">
+          <button class="fancyButton" style="margin:10px;">
+            View leaderboard →
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<%- include('partials/footer') %>
