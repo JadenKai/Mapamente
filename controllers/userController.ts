@@ -2,11 +2,19 @@ import { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import multer from "multer";
 import sharp from "sharp";
-import { createUser, findUserByUsername, findUserById, updateUserProfilePic } from "../models/userModel.js";
+import {
+  createUser,
+  findUserByUsername,
+  findUserById,
+  updateUserProfilePic,
+} from "../models/userModel.js";
 import { getTop10OfUser } from "./scoreController.js";
 
 // Keep uploaded file in memory as a Buffer rather than writing to disk
-const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 10 * 1024 * 1024 },
+});
 
 const SALT_ROUNDS = 12;
 
@@ -14,7 +22,7 @@ async function signupPost(req: Request, res: Response): Promise<void> {
   const { username, password, passwordCheck } = req.body;
 
   if (!username || !password || !passwordCheck) {
-    res.render('signup', { error: "All fields are required." });
+    res.render("signup", { error: "All fields are required." });
     return;
   }
 
@@ -37,7 +45,7 @@ async function signupPost(req: Request, res: Response): Promise<void> {
 
 async function loginPost(req: Request, res: Response): Promise<void> {
   const { username, password } = req.body;
-  
+
   if (!username || !password) {
     res.render("login", { error: "All fields are required." });
     return;
@@ -74,8 +82,8 @@ async function profileGet(req: Request, res: Response): Promise<void> {
     res.redirect("/login");
     return;
   }
-  
-  res.render("profile", { user, scores: await getTop10OfUser(user.userId)});
+
+  res.render("profile", { user, scores: await getTop10OfUser(user.userId) });
 }
 
 // Handles profile picture upload: resizes to 200x200 WebP and stores raw bytes in the DB
@@ -100,10 +108,4 @@ async function profilePhotoPost(req: Request, res: Response): Promise<void> {
   res.redirect("/profile");
 }
 
-export {
-  signupPost,
-  loginPost,
-  profileGet,
-  profilePhotoPost,
-  upload
-}
+export { signupPost, loginPost, profileGet, profilePhotoPost, upload };

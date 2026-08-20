@@ -1,33 +1,33 @@
-import type { RowDataPacket } from 'mysql2';
+import type { RowDataPacket } from "mysql2";
 
-declare module 'express-session' {
+declare module "express-session" {
   interface SessionData {
     userId: number;
   }
 }
 
-//Type to pass around answer information without passing around answers
+// Type to pass around answer information without passing around answers
 interface Answer {
   answerId: number;
   answerText: string;
 }
 
-//Type to pass around, including the Answers as part of the question
+// Type to pass around, including the Answers as part of the question
 interface Question {
   questionId: number;
   questionText: string;
   answers: Answer[];
 }
 
-//Type to keep track of the information that needs to be displayed on leaderboard
+// Type to keep track of the information that needs to be displayed on leaderboard
 interface Score {
-  username : string;
+  username: string;
   correctCount: number;
   score: number;
   cityName: string;
 }
 
-//Function that represents a Database entry in the City database
+// Function that represents a Database entry in the City database
 interface CityEntry extends RowDataPacket {
   cityId: number;
   cityName: string;
@@ -36,7 +36,7 @@ interface CityEntry extends RowDataPacket {
   cityBanner: string;
 }
 
-//Function that represents a Database entry in the User database
+// Function that represents a Database entry in the User database
 interface UserEntry extends RowDataPacket {
   userId: number;
   username: string;
@@ -48,14 +48,14 @@ interface UserEntry extends RowDataPacket {
   isActive: boolean;
 }
 
-//Function that represents a Database entry in the Question database
+// Function that represents a Database entry in the Question database
 interface QuestionEntry extends RowDataPacket {
   questionId: number;
   cityId: number;
   questionText: string;
 }
 
-//Function that represents a Database entry in the Answer database
+// Function that represents a Database entry in the Answer database
 interface AnswerEntry extends RowDataPacket {
   answerId: number;
   questionId: number;
@@ -63,7 +63,7 @@ interface AnswerEntry extends RowDataPacket {
   isCorrect: boolean;
 }
 
-//Function that represents a Database entry in the Score database
+// Function that represents a Database entry in the Score database
 interface ScoreEntry extends RowDataPacket {
   scoreId: number;
   userId: number;
@@ -82,5 +82,5 @@ export {
   QuestionEntry,
   AnswerEntry,
   ScoreEntry,
-  Score
-}
+  Score,
+};

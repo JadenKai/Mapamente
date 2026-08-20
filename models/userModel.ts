@@ -3,10 +3,13 @@ import pool from "../config/database.js";
 import { UserEntry } from "../types.js";
 
 // Creates a user from a username and a passwordHash
-async function createUser(username: string, passwordHash: string): Promise<boolean> {
+async function createUser(
+  username: string,
+  passwordHash: string,
+): Promise<boolean> {
   const [result] = await pool.query<ResultSetHeader>(
     "INSERT INTO User (username, passwordHash) VALUES (?, ?)",
-    [username, passwordHash]
+    [username, passwordHash],
   );
   return result.affectedRows === 1;
 }
@@ -15,7 +18,7 @@ async function createUser(username: string, passwordHash: string): Promise<boole
 async function findUserByUsername(username: string): Promise<UserEntry | null> {
   const [rows] = await pool.query<UserEntry[]>(
     "SELECT * FROM User WHERE username = ?",
-    [username]
+    [username],
   );
   return rows[0] ?? null;
 }
@@ -25,23 +28,21 @@ async function findUserByUsername(username: string): Promise<UserEntry | null> {
 async function findUserById(userId: number): Promise<UserEntry | null> {
   const [rows] = await pool.query<UserEntry[]>(
     "SELECT * FROM User WHERE userId = ?",
-    [userId]
+    [userId],
   );
   return rows[0] ?? null;
 }
 
 // Set the profile picture
-async function updateUserProfilePic(userId: number, picBuffer: Buffer): Promise<boolean> {
+async function updateUserProfilePic(
+  userId: number,
+  picBuffer: Buffer,
+): Promise<boolean> {
   const [result] = await pool.query<ResultSetHeader>(
     "UPDATE User SET profilePic = ? WHERE userId = ?",
-    [picBuffer, userId]
+    [picBuffer, userId],
   );
   return result.affectedRows === 1;
 }
 
-export {
-  createUser,
-  findUserByUsername,
-  findUserById,
-  updateUserProfilePic,
-}
+export { createUser, findUserByUsername, findUserById, updateUserProfilePic };
